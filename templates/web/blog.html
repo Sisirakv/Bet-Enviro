@@ -1,0 +1,222 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="sp-title">
+
+
+
+    <div class="row">
+        <div id="sp-title" class="col-lg-12 ">
+            <div class="sp-column ">
+                <div class="sp-page-title" style="background-color: #f4f5f9;">
+                    <div class="container">
+                        <h2 class="sp-page-title-heading">Blog List</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="sp-main-body">
+
+    <div class="container">
+        <div class="container-inner">
+
+
+            <div class="row">
+
+                <main id="sp-component" class="col-lg-8 ">
+                    <div class="sp-column ">
+                        <div id="system-message-container" aria-live="polite">
+                        </div>
+
+
+
+
+                        <div class="blog">
+
+
+
+
+
+
+                            <div class="article-list articles-leading">
+                                <div class="article" itemprop="blogPost" itemscope
+                                    itemtype="https://schema.org/BlogPosting">
+
+
+                                    <div class="article-intro-image float-left">
+                                        <a href="blog-details.html">
+                                            <img src="{% static 'images/p5.jpg' %}" itemprop="thumbnailUrl" width="1200"
+                                                height="801" loading="lazy"> </a>
+                                    </div>
+
+                                    <div class="article-body">
+
+
+                                        <div class="article-header">
+                                            <h2>
+                                                <a href="blog-details.html">
+                                                    Launched sub-brands for lead developments. </a>
+                                            </h2>
+
+
+
+
+                                        </div>
+
+
+                                        <div class="article-info">
+
+
+
+
+                                            <span class="category-name" title="Category: Gardening">
+                                                <a href="blog-list.html">Gardening</a>
+                                            </span>
+
+
+                                            <span class="published" title="Published: 27 April 2022">
+                                                <time datetime="2022-04-27T20:16:45+00:00">
+                                                    27 April 2022 </time>
+                                            </span>
+
+
+
+
+
+                                        </div>
+
+
+
+
+                                        <div class="article-introtext">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua.</p>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                             
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </main>
+                <aside id="sp-right" class="col-lg-4 ">
+                    <div class="sp-column ">
+                        <div class="sp-module ">
+                            <h3 class="sp-module-title">Search Here</h3>
+                            <div class="sp-module-content">
+                                <form class="mod-finder js-finder-searchform form-search"
+                                    action="https://greelan.themes-pro.com/component/finder/search?Itemid=101"
+                                    method="get" role="search">
+                                    <label for="mod-finder-searchword112"
+                                        class="visually-hidden finder">Search</label><input type="text" name="q"
+                                        id="mod-finder-searchword112" class="js-finder-search-query form-control"
+                                        value="" placeholder="Search ...">
+                                    <input type="hidden" name="Itemid" value="101"><input type="hidden" name="Itemid"
+                                        value="124">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="sp-module ">
+                            <h3 class="sp-module-title">Categories</h3>
+                            <div class="sp-module-content">
+                                <ul class="mod-articlescategories categories-module mod-list">
+                                    <li class="active"> <a href="blog-list.html">
+                                            Gardening </a>
+
+                                    </li>
+                                    <li> <a href="blog-list.html">
+                                            Landscaping </a>
+
+                                    </li>
+                                    <li> <a href="blog-list.html">
+                                            Lawn Maintenance </a>
+
+                                    </li>
+                                    <li> <a href="blog-list.html">
+                                            Installation Services </a>
+
+                                    </li>
+                                    <li> <a href="blog-list.html">
+                                            Uncategorised </a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sp-module ">
+                            <h3 class="sp-module-title">Tags</h3>
+                            <div class="sp-module-content">
+                                <div class="mod-tagspopular-cloud tagspopular tagscloud">
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/green.html">
+                                            green</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/nature.html">
+                                            nature</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/lawn.html">
+                                            lawn</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/landscape.html">
+                                            landscape</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/garden.html">
+                                            garden</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/tree.html">
+                                            tree</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/tool.html">
+                                            tool</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/gloves.html">
+                                            gloves</a>
+                                    </span>
+                                    <span class="tag">
+                                        <a class="tag-name" style="font-size: 1em"
+                                            href="../component/tags/tag/planting.html">
+                                            planting</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

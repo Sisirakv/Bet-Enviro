@@ -24,3 +24,7 @@ def blog(request):
 def services(request):
 
     return render(request,"web/services.html")
+
+
+def about_us(request):
+    return render(request,"web/about-us.html")

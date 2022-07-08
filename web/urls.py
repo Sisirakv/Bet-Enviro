@@ -5,7 +5,7 @@ from . import views
 app_name='web'
 
 urlpatterns = [
-    path("",views.base),
+    path("",views.index,name='index'),
     path("product",views.product,name='product'),
     path("contact",views.contact,name='contact'),
     path("gallery",views.gallery,name='gallery'),

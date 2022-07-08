@@ -28,14 +28,14 @@ h5 {
 
 #sp-header .sp-megamenu-parent > li:hover > a, 
 #sp-header .sp-megamenu-parent > li.active:hover > a {
-	color: var(--primary_color) !important;
+	color: var(--hover_color) !important;
 }
 #sp-header .sp-megamenu-parent > li > a {
 	color: var(--body_color) !important;
 }
 #sp-header .sp-megamenu-parent > li.active > a,
 .sp-megamenu-parent .sp-dropdown li.sp-menu-item > a:hover {
-	color: var(--hover_color) !important;
+	color: var(--primary_color) !important;
 }
 .sp-megamenu-parent .sp-dropdown li.sp-menu-item.active > a {
 	color: var(--dark_color) !important;

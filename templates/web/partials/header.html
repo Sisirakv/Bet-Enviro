@@ -3,6 +3,8 @@
 <div class="body-wrapper">
     <div class="body-innerwrapper">
 
+        <!-- Top Header  -->
+
         <section id="sp-topbars">
 
 
@@ -33,7 +35,7 @@
                                                                                     </li>
                                                                                     <li><a href="tel:+89709806187">897.
                                                                                             098. 061. 87.</a></li>
-                                                                                    <li><a href="#!">12/A, New
+                                                                                    <li><a href="{% url 'web:About us' %}">12/A, New
                                                                                             Booston Tower, NYC</a>
                                                                                     </li>
                                                                                 </ul>
@@ -101,14 +103,14 @@
                                                                     class="sppb-addon-wrapper">
                                                                     <div id="sppb-addon-1651096361588"
                                                                         class="clearfix ">
-                                                                        <div
-                                                                            class="sppb-addon sppb-addon-raw-html ">
+                                                                        <div class="sppb-addon sppb-addon-raw-html ">
                                                                             <div class="sppb-addon-content">
-                                                                                <ul
-                                                                                    class="topbar-menu sppb-text-right">
-                                                                                    <li><a href="#!">Get a Quote</a></li>
-                                                                                    
-                                                                                    <li><a href="#!">Locate Your Service</a>
+                                                                                <ul class="topbar-menu sppb-text-right">
+                                                                                    <li><a href="#!">Get a Quote</a>
+                                                                                    </li>
+
+                                                                                    <li><a href="#!">Locate Your
+                                                                                            Service</a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -295,6 +297,11 @@
             </div>
 
         </section>
+
+        <!-- END TOP HEADER -->
+
+        <!-- Nab bar -->
+
         <header id="sp-header">
 
             <div class="container">
@@ -302,11 +309,10 @@
 
 
                     <div class="row">
-                        <div id="sp-logo" class="col-5 col-sm-5  col-lg-5 col-xl-3 ">
+                        <div id="sp-logo" class="col-4 col-sm-3  col-lg-4 ">
                             <div class="sp-column  d-flex align-items-center">
-                                <div class="logo"><a href="index.html">
-                                        <img class='logo-image  d-none d-lg-inline-block'
-                                            srcset=''
+                                <div class="logo"><a href="">
+                                        <img class='logo-image  d-none d-lg-inline-block' srcset=''
                                             src=" {% static 'images/157x45.png' %}"
                                             alt='GreeLan – Gardening Lawn and Landscaping Joomla 4 Template' />
                                         <img class="logo-image-phone d-inline-block d-lg-none"
@@ -315,7 +321,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="sp-menu" class="col-2 col-sm-2 col-md-2  col-lg-2 col-xl-7 ">
+                        <div id="sp-menu" class="col-2 col-sm-2 col-md-2  col-lg-6 ">
                             <div class="sp-column  d-flex align-items-center justify-content-end">
                                 <nav class="sp-megamenu-wrapper d-flex" role="navigation"><a id="offcanvas-toggler"
                                         aria-label="Menu" class="offcanvas-toggler-right d-flex d-lg-none" href="#">
@@ -324,146 +330,80 @@
                                         </div>
                                     </a>
                                     <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-block">
-                                        <li class="sp-menu-item  active "><a href="#!">Home</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item current-item active"><a
-                                                                aria-current="page" href="index.html">Home 1</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="home/home-2.html">Home
-                                                                2</a></li>
-                                                        <li class="sp-menu-item"><a href="home/home-3.html">Home
-                                                                3</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_index %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:index' %}">Home</a>
                                         </li>
-                                        <li class="sp-menu-item "><a href="{% url 'web:About us' %}">About</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a href="pages/about-us.html">About
-                                                                Us</a></li>
-                                                        <li class="sp-menu-item"><a href="pages/our-team.html">Our
-                                                                Team</a></li>
-                                                        <li class="sp-menu-item"><a href="pages/help-faq.html">Help
-                                                                &amp; FAQ</a></li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="pages/header-mini.html">Header mini</a></li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="pages/header-transparent.html">Header
-                                                                transparent</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_about_us %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:About us' %}">About</a>
                                         </li>
-                                        <li class="sp-menu-item sp-has-child"><a href="{% url 'web:services' %}">Services</a>
+                                        <li {% if is_services %} class="sp-menu-item active sp-has-child" {% endif %}><a
+                                                href="{% url 'web:services' %}">Services</a>
                                             <div class="sp-dropdown sp-dropdown-main sp-menu-right"
                                                 style="width: 240px;">
                                                 <div class="sp-dropdown-inner">
                                                     <ul class="sp-dropdown-items">
                                                         <li class="sp-menu-item"><a
-                                                                href="services/service-one.html">Water Quality Testing & Diaganosis</a>
-                                                                
+                                                                href="services/service-one.html">Water Quality Testing &
+                                                                Diaganosis</a>
+
                                                         </li>
                                                         <li class="sp-menu-item"><a
                                                                 href="services/service-two.html">Water Treatment</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                                href="services/services-details.html">Water Conservation & recharging</a>
+                                                                href="services/services-details.html">Water Conservation
+                                                                & recharging</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">commercials & industrial water Treatment</a>
+                                                                href="services/services-details.html">commercials &
+                                                                industrial water Treatment</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">waste water treatment</a>
+                                                                href="services/services-details.html">waste water
+                                                                treatment</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">food waste managment</a>
+                                                                href="services/services-details.html">food waste
+                                                                managment</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">solid waste managment</a>
+                                                                href="services/services-details.html">solid waste
+                                                                managment</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">solar energy systems</a>
+                                                                href="services/services-details.html">solar energy
+                                                                systems</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">after sales services</a>
+                                                                href="services/services-details.html">after sales
+                                                                services</a>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                            href="services/services-details.html">consulting services</a>
+                                                                href="services/services-details.html">consulting
+                                                                services</a>
                                                         </li>
-                                                            
+
                                                     </ul>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="sp-menu-item "><a href="{% url 'web:product' %}">Products</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
-                                                                href="projects/project-one.html">Project One</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="projects/project-two.html">Project Two</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="projects/project-three.html">Project Three</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_product %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:product' %}">Products</a>
                                         </li>
-                                        <li class="sp-menu-item "><a href="{% url 'web:blog' %}">Blog</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a href="blog/blog-list.html">Blog
-                                                                List</a></li>
-                                                        <li class="sp-menu-item"><a href="blog/blog-grid.html">Blog
-                                                                Grid</a></li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="blog/blog-details.html">Blog Details</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_blog %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:blog' %}">Blog</a>
                                         </li>
-                                        <li class="sp-menu-item "><a href="{% url 'web:gallery' %}">Gallery</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a href="shop/main-shop.html">Main
-                                                                Shop</a></li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="shop/product-details.html">Product Details</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_gallery %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:gallery' %}">Gallery</a>
                                         </li>
-                                        <li class="sp-menu-item "><a href="{% url 'web:contact' %}">Contact</a>
-                                            <!-- <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
-                                                                href="contact/contact">Contact</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                        <li {% if is_contact %} class="sp-menu-item active" {% endif %}><a
+                                                href="{% url 'web:contact' %}">Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div id="sp-search" class="col-5 col-sm-5 col-md-5  col-lg-5 col-xl-2 ">
+                        <div id="sp-search" class="col-6 col-sm-1 col-md-5  col-lg-2 ">
                             <div class="sp-column  d-flex align-items-center">
                                 <div class="sp-module ">
                                     <div class="sp-module-content">
@@ -474,8 +414,7 @@
                                                         <div class="sppb-row">
                                                             <div class="sppb-col-md-12"
                                                                 id="column-wrap-id-1651098505619">
-                                                                <div id="column-id-1651098505619"
-                                                                    class="sppb-column">
+                                                                <div id="column-id-1651098505619" class="sppb-column">
                                                                     <div class="sppb-column-addons">
                                                                         <div id="sppb-addon-wrapper-1651098505623"
                                                                             class="sppb-addon-wrapper">
@@ -483,8 +422,7 @@
                                                                                 class="clearfix ">
                                                                                 <div
                                                                                     class="sppb-addon sppb-addon-icons-group  icons-group-title-postion-left sppb-text-right">
-                                                                                    <ul
-                                                                                        class="sppb-icons-group-list">
+                                                                                    <ul class="sppb-icons-group-list">
                                                                                         <li id="icon-1651098505624"
                                                                                             class=""><a href="#!"
                                                                                                 aria-label="Icon group item"><i
@@ -844,106 +782,92 @@
             </div>
 
         </header>
+
+        <!-- NAV BAR END -->
+
+        <!-- MOBLIE VIEW -->
+
         <!-- Off Canvas Menu -->
-<div class="offcanvas-overlay"></div>
-<!-- Rendering the offcanvas style -->
-<!-- If canvas style selected then render the style -->
-<!-- otherwise (for old templates) attach the offcanvas module position -->
-<div class="offcanvas-menu">
-<div class="d-flex align-items-center p-3 pt-4">
-<div class="logo"><a href="index.html">
-        <img class='logo-image  d-none d-lg-inline-block'
-            srcset=''
-            src="{% static 'images/157x45.png' %}"
-            alt='GreeLan – Gardening Lawn and Landscaping Joomla 4 Template' />
-        <img class="logo-image-phone d-inline-block d-lg-none" src="{% static 'images/157x45.png' %}"
-            alt="GreeLan – Gardening Lawn and Landscaping Joomla 4 Template" /></a></div> <a href="#"
-    class="close-offcanvas" aria-label="Close Off-canvas">
-    <div class="burger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</a>
-</div>
-<div class="offcanvas-inner">
-<div class="d-flex header-modules mb-3">
-    <div class="sp-module ">
-        <div class="sp-module-content">
-            <form class="mod-finder js-finder-searchform form-search"
-                action="https://greelan.themes-pro.com/component/finder/search?Itemid=101" method="get"
-                role="search">
-                <label for="mod-finder-searchword0" class="visually-hidden finder">Search</label><input
-                    type="text" name="q" id="mod-finder-searchword0"
-                    class="js-finder-search-query form-control" value="" placeholder="Search ...">
-                <input type="hidden" name="Itemid" value="101"><input type="hidden" name="Itemid"
-                    value="101">
-            </form>
+        <div class="offcanvas-overlay"></div>
+        
+        <div class="offcanvas-menu">
+            <div class="d-flex align-items-center p-3 pt-4">
+                <div class="logo"><a href="{% url 'web:index' %}">
+                        <img class='logo-image  d-none d-lg-inline-block' srcset=''
+                            src="{% static 'images/157x45.png' %}"
+                            alt='GreeLan – Gardening Lawn and Landscaping Joomla 4 Template' />
+                        <img class="logo-image-phone d-inline-block d-lg-none" src="{% static 'images/157x45.png' %}"
+                            alt="GreeLan – Gardening Lawn and Landscaping Joomla 4 Template" /></a></div> <a href="#"
+                    class="close-offcanvas" aria-label="Close Off-canvas">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+            <div class="offcanvas-inner">
+                <div class="d-flex header-modules mb-3">
+                    <div class="sp-module ">
+                        <div class="sp-module-content">
+                            <form class="mod-finder js-finder-searchform form-search"
+                                action="https://greelan.themes-pro.com/component/finder/search?Itemid=101" method="get"
+                                role="search">
+                                <label for="mod-finder-searchword0" class="visually-hidden finder">Search</label><input
+                                    type="text" name="q" id="mod-finder-searchword0"
+                                    class="js-finder-search-query form-control" value="" placeholder="Search ...">
+                                <input type="hidden" name="Itemid" value="101"><input type="hidden" name="Itemid"
+                                    value="101">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-module ">
+                    <div class="sp-module-content">
+                        <ul class="menu nav-pills">
+                            <li {% if is_index %} class="item-109 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:index' %}">Home<span class="menu-toggler"></span></a>
+                            </li>
+                            <li {% if is_about_us %} class="item-110 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:About us' %}">About<span class="menu-toggler"></span></a>
+
+                            </li>
+                            <li {% if is_services %} class="item-111 active menu-deeper menu-parent" {% endif %}><a
+                                    href="{% url 'web:services' %}">Services<span class="menu-toggler"></span></a>
+                                <ul class="menu-child">
+                                    <li class="item-117"><a href="services/service-one.html">Service One</a></li>
+                                    <li class="item-118"><a href="services/service-two.html">Service Two</a></li>
+                                    <li class="item-119"><a href="services/services-details.html">Services details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li {% if is_product %} class="item-112 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:product' %}">Products<span class="menu-toggler"></span></a>
+                            </li>
+                            <li {% if is_blog %} class="item-113 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:blog' %}">Blog<span class="menu-toggler"></span></a>
+
+                            </li>
+                            <li {% if is_gallery %} class="item-114 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:gallery' %}">Gallery<span class="menu-toggler"></span></a>
+
+                            </li>
+                            <li {% if is_contact %} class="item-115 active menu-deeper" {% endif %}><a
+                                    href="{% url 'web:contact' %}">Contact<span class="menu-toggler"></span></a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- custom module position -->
+
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="sp-module ">
-    <div class="sp-module-content">
-        <ul class="menu nav-pills">
-            <li class="item-109 active menu-deeper "><a href="#!">Home<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-101 default current active"><a href="index.html">Home 1</a></li>
-                    <li class="item-127"><a href="home/home-2.html">Home 2</a></li>
-                    <li class="item-130"><a href="home/home-3.html">Home 3</a></li>
-                </ul> -->
-            </li>
-            <li class="item-110 menu-deeper "><a href="#!">About<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-116"><a href="pages/about-us.html">About Us</a></li>
-                    <li class="item-128"><a href="pages/our-team.html">Our Team</a></li>
-                    <li class="item-129"><a href="pages/help-faq.html">Help &amp; FAQ</a></li>
-                    <li class="item-131"><a href="pages/header-mini.html">Header mini</a></li>
-                    <li class="item-132"><a href="pages/header-transparent.html">Header transparent</a></li>
-                </ul> -->
-            </li>
-            <li class="item-111 menu-deeper menu-parent"><a href="#!">Services<span
-                        class="menu-toggler"></span></a>
-                <ul class="menu-child">
-                    <li class="item-117"><a href="services/service-one.html">Service One</a></li>
-                    <li class="item-118"><a href="services/service-two.html">Service Two</a></li>
-                    <li class="item-119"><a href="services/services-details.html">Services details</a></li>
-                </ul>
-            </li>
-            <li class="item-112 menu-deeper "><a href="#!">Products<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-120"><a href="projects/project-one.html">Project One</a></li>
-                    <li class="item-121"><a href="projects/project-two.html">Project Two</a></li>
-                    <li class="item-122"><a href="projects/project-three.html">Project Three</a></li>
-                </ul> -->
-            </li>
-            <li class="item-113 menu-deeper "><a href="#!">Blog<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-124"><a href="blog/blog-list.html">Blog List</a></li>
-                    <li class="item-125"><a href="blog/blog-grid.html">Blog Grid</a></li>
-                    <li class="item-126"><a href="blog/blog-details.html">Blog Details</a></li>
-                </ul> -->
-            </li>
-            <li class="item-114 menu-deeper "><a href="#!">Gallery<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-147"><a href="shop/main-shop.html">Main Shop</a></li>
-                    <li class="item-148"><a href="shop/product-details.html">Product Details</a></li>
-                </ul> -->
-            </li>
-            <li class="item-115 menu-deeper"><a href="#!">Contact<span class="menu-toggler"></span></a>
-                <!-- <ul class="menu-child">
-                    <li class="item-123"><a href="contact/contact">Contact</a></li>
-                </ul> -->
-            </li>
-        </ul>
-    </div>
-</div>
-
-
-
-
-
-<!-- custom module position -->
-
-</div>
-</div>
+        <!-- MOBILE VIEW END -->

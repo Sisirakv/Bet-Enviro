@@ -1,6 +1,492 @@
 {% extends 'web/partials/base.html' %}
 {% load static %}
 {% block content %}
+
+<style
+    nonce="NmE5MGEwNzZjMjJhZDgxMTZmYmZlYTEyNjQxZGE0NTZkYjBhZGNiODZlNDhmOWYyOWIwNGI0MzA2ZmExYTk5Yzk2MzYzMGU4ZDgxZjJmY2Y4NGYxNGJkNDVmNDdhNmRiNTJiNDdjMDJmNzFkYmNlOTU1MDYzODI1NDYyZDI5ZDc=">
+    .sp-page-builder .page-content #section-id-1651219595796 {
+        padding-top: 120px;
+        padding-right: 0px;
+        padding-bottom: 60px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #column-id-1651219595795 {
+        box-shadow: 0 0 0 0 #fff;
+    }
+
+    #sppb-addon-wrapper-1651219595799 {
+        margin: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-1651219595799 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-nav-control .nav-control {
+        height: 80px;
+        line-height: 80px;
+        width: 80px;
+        background: #ffffff;
+        color: #323131;
+        font-size: 15px;
+        border-color: rgba(255, 255, 255, 0);
+        border-radius: 100px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-nav-control .nav-control:hover {
+        background-color: var(--hover_color);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0);
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-dots ul li {
+        height: 4px;
+        line-height: 4px;
+        width: 25px;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-item-overlay {
+        background: -webkit-linear-gradient(125deg, rgba(59, 25, 208, 0.5) 2%, rgba(255, 79, 226, 0.5) 99%) transparent;
+        background: linear-gradient(125deg, rgba(59, 25, 208, 0.5) 2%, rgba(255, 79, 226, 0.5) 99%) transparent;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-heading {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-subheading {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-description {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595799 .sppb-carousel-extended-nav-control {
+        top: -80px;
+    }
+
+    @media (min-width:768px) and (max-width:991px) {
+        #sppb-addon-1651219595799 .sppb-carousel-extended-nav-control .nav-control {
+            height: 80px;
+            line-height: 80px;
+            width: 80px;
+            background: #ffffff;
+            color: #323131;
+            font-size: 15px;
+            border-color: rgba(255, 255, 255, 0);
+            border-radius: 100px;
+        }
+    }
+
+    @media (max-width:767px) {
+        #sppb-addon-1651219595799 .sppb-carousel-extended-nav-control .nav-control {
+            height: 80px;
+            line-height: 80px;
+            width: 80px;
+            background: #ffffff;
+            color: #323131;
+            font-size: 15px;
+            border-color: rgba(255, 255, 255, 0);
+            border-radius: 100px;
+        }
+    }
+
+    .sp-page-builder .page-content #section-id-1651219595793 {
+        padding-top: 20px;
+        padding-right: 0px;
+        padding-bottom: 90px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #column-id-1651219595792 {
+        box-shadow: 0 0 0 0 #fff;
+    }
+
+    #sppb-addon-wrapper-1651219595861 {
+        margin: 0px 0px 30px 0px;
+    }
+
+    #sppb-addon-1651219595861 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595861 .sppb-addon-title {
+        color: #111111;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 600;
+    }
+
+    #column-id-1651219595794 {
+        padding-top: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        background-color: var(--hover_color);
+    }
+
+    #sppb-addon-wrapper-1651219595838 {
+        margin: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-1651219595838 {
+        color: #ffffff;
+        box-shadow: 0 0 0 0 #ffffff;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-1651219595838 .sppb-addon-title {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+
+    #sppb-addon-1651219595838 h2.sppb-addon-title {
+        margin: 0px 0px 5px 0px;
+        text-transform: none;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-wrapper-1651219595826 {
+        margin: -7px 0px 20px 0px;
+    }
+
+    #sppb-addon-1651219595826 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-wrapper-1651219595829 {
+        margin: 0px 0px 20px 0px;
+    }
+
+    #sppb-addon-1651219595829 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595829 .sppb-addon-content ul {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+    #sppb-addon-1651219595829 .sppb-addon-content li {
+        list-style: none;
+        color: #ffffff;
+        padding-bottom: 10px;
+    }
+
+    #sppb-addon-1651219595829 .sppb-addon-content li span {
+        font-style: italic;
+        float: right;
+    }
+
+    #sppb-addon-1651219595829 .sppb-addon-content small {
+        font-weight: 500;
+    }
+
+    #sppb-addon-wrapper-1651219595891 {
+        margin: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-1651219595891 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595891 .btn.btn_secondary {
+        color: #ffffff;
+        border-color: var(--dark_color);
+        background-color: var(--dark_color);
+    }
+
+    #sppb-addon-1651219595891 .btn.btn_secondary:before {
+        background-color: var(--primary_color);
+    }
+
+    #sppb-addon-1651219595891 .btn.btn_secondary:hover {
+        color: #ffffff;
+    }
+
+    #sppb-addon-1651219595891 .btn {
+        z-index: 1;
+        border: none;
+        height: 60px;
+        outline: none;
+        line-height: 1;
+        font-size: 16px;
+        border-radius: 0;
+        font-weight: 700;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        padding: 10px 40px;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    #sppb-addon-1651219595891 .btn:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    #sppb-addon-1651219595891 .btn:before {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        bottom: auto;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sppb-addon-1651219595891 .btn:hover {
+        text-decoration: none;
+    }
+
+    #sppb-addon-1651219595891 .btn:hover:before {
+        top: auto;
+        bottom: 0;
+        height: 100%;
+    }
+
+    .sp-page-builder .page-content #section-id-1651219595903 {
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 120px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #column-id-1651219595902 {
+        box-shadow: 0 0 0 0 #fff;
+    }
+
+    #sppb-addon-wrapper-1651219595906 {
+        margin: 0px 0px 0px 0px;
+    }
+
+    #sppb-addon-1651219595906 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595906 .sppb-gallery img {
+        object-fit: cover;
+    }
+
+    #sppb-addon-1651219595906 .sppb-gallery img {
+        width: 350px;
+        height: 290px;
+    }
+
+    #sppb-addon-1651219595906 .sppb-gallery li {
+        margin: 15px;
+    }
+
+    #sppb-addon-1651219595906 .sppb-gallery {
+        margin: -15px;
+    }
+
+    @media (min-width:768px) and (max-width:991px) {
+        #sppb-addon-1651219595906 .sppb-gallery img {
+            width: px;
+            height: px;
+        }
+    }
+
+    @media (max-width:767px) {
+        #sppb-addon-1651219595906 .sppb-gallery img {
+            width: px;
+            height: px;
+        }
+    }
+
+    .sp-page-builder .page-content #section-id-1651219595864 {
+        padding-top: 120px;
+        padding-right: 0px;
+        padding-bottom: 120px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        background-color: #f2f6ff;
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #column-id-1651219595795 {
+        box-shadow: 0 0 0 0 #fff;
+    }
+
+    #sppb-addon-wrapper-1651219595796 {
+        margin: 0px 0px 5px 0px;
+    }
+
+    #sppb-addon-1651219595796 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-wrapper-1651219595797 {
+        margin: 0px 0px 25px 0px;
+    }
+
+    #sppb-addon-1651219595797 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595797 .sppb-addon-title {
+        margin-bottom: 20px;
+        color: var(--primary_color);
+        font-size: 60px;
+        line-height: 70px;
+        font-weight: 600;
+    }
+
+    @media (min-width:768px) and (max-width:991px) {
+        #sppb-addon-1651219595797 .sppb-addon-title {
+            font-size: 50px;
+            line-height: 50px;
+            line-height: 60px;
+        }
+    }
+
+    @media (max-width:767px) {
+        #sppb-addon-1651219595797 .sppb-addon-title {
+            font-size: 50px;
+            line-height: 50px;
+            line-height: 60px;
+        }
+    }
+
+    #sppb-addon-wrapper-1651219595798 {
+        margin: 0px -15px 0px -15px;
+    }
+
+    #sppb-addon-1651219595798 {
+        box-shadow: 0 0 0 0 #ffffff;
+    }
+
+    #sppb-addon-1651219595798 .portfolio_fullimage .item_title {
+        text-align: left !important;
+        opacity: 1;
+        margin-bottom: 10px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-nav-control .nav-control {
+        height: 60px;
+        line-height: 60px;
+        width: 60px;
+        background: #ffffff;
+        color: #161313;
+        font-size: 16px;
+        margin-top: 0%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-nav-control .nav-control:hover {
+        background-color: var(--color-primary);
+        color: #ffffff;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-dots ul li {
+        height: 4px;
+        line-height: 4px;
+        width: 25px;
+        background: #d3d3d3;
+        border-radius: 0px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-dots ul li:hover span,
+    #sppb-addon-1651219595798 .sppb-carousel-extended-dots ul li.active span {
+        background: var(--color-primary);
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-item-overlay {
+        background: -webkit-linear-gradient(125deg, rgba(59, 25, 208, 0.5) 2%, rgba(255, 79, 226, 0.5) 99%) transparent;
+        background: linear-gradient(125deg, rgba(59, 25, 208, 0.5) 2%, rgba(255, 79, 226, 0.5) 99%) transparent;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-heading {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-subheading {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-description {
+        letter-spacing: 0px;
+    }
+
+    #sppb-addon-1651219595798 .sppb-carousel-extended-nav-control {
+        top: -60px;
+    }
+
+    @media (min-width:768px) and (max-width:991px) {
+        #sppb-addon-1651219595798 .sppb-carousel-extended-nav-control .nav-control {
+            height: 60px;
+            line-height: 60px;
+            width: 60px;
+            background: #ffffff;
+            color: #161313;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width:767px) {
+        #sppb-addon-1651219595798 .sppb-carousel-extended-nav-control .nav-control {
+            height: 60px;
+            line-height: 60px;
+            width: 60px;
+            background: #ffffff;
+            color: #161313;
+            font-size: 16px;
+        }
+    }
+</style>
+
+<style
+    nonce="NmE5MGEwNzZjMjJhZDgxMTZmYmZlYTEyNjQxZGE0NTZkYjBhZGNiODZlNDhmOWYyOWIwNGI0MzA2ZmExYTk5Yzk2MzYzMGU4ZDgxZjJmY2Y4NGYxNGJkNDVmNDdhNmRiNTJiNDdjMDJmNzFkYmNlOTU1MDYzODI1NDYyZDI5ZDc=">
+    .sp-megamenu-parent>li>a,
+    .sp-megamenu-parent>li>span,
+    .sp-megamenu-parent .sp-dropdown li.sp-menu-item>a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+</style>
+
+
+
 <section id="sp-title" style="    background-color: #ffffff;">
 
 
@@ -19,33 +505,81 @@
 
 </section>
 
+
+<section id="section-id-1651219595903" class="sppb-section" style="    background-color: #ffffff; ">
+
+
+    <div class="sppb-row-container" >
+        <div class="sppb-row">
+            <div class="sppb-col-md-12" id="column-wrap-id-1651219595902">
+                <div id="column-id-1651219595902" class="sppb-column" style="margin-top: 94px;margin-bottom: 94px;">
+                    <div class="sppb-column-addons">
+                        <div id="sppb-addon-wrapper-1651219595906" class="sppb-addon-wrapper">
+                            <div id="sppb-addon-1651219595906" class="clearfix ">
+                                <div class="sppb-addon sppb-addon-gallery ">
+                                    <div class="sppb-addon-content">
+                                        <ul class="sppb-gallery clearfix gallery-item-left">
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_1.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_1.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_2.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_2.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_3.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_3.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_4.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_4.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_5.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_5.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                            <li><a href=" {% static 'images/portfolio_gallery_img_6.jpg' %} "
+                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
+                                                        src=" {% static 'images/portfolio_gallery_img_6.jpg' %} " alt=""
+                                                        loading="lazy"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+{% comment %}
 <section id="section-id-1651067718168" class="sppb-section" style="    background-color: #ffffff;">
     <div class="sppb-row-container">
         <div class="sppb-row">
             <div class="sppb-col-md-12" id="column-wrap-id-1651067718167">
                 <div id="column-id-1651067718167" class="sppb-column">
                     <div class="sppb-column-addons">
-                        <div id="sppb-addon-wrapper-1651067718189"
-                            class="sppb-addon-wrapper">
+                        <div id="sppb-addon-wrapper-1651067718189" class="sppb-addon-wrapper">
                             <div id="sppb-addon-1651067718189" class="clearfix ">
-                                <div
-                                    class="sppb-addon sppb-addon-single-image sppb-text-center ">
+                                <div class="sppb-addon sppb-addon-single-image sppb-text-center ">
                                     <div class="sppb-addon-content">
-                                        <div
-                                            class="sppb-addon-single-image-container">
-                                            <img class="sppb-img-responsive"
-                                                src="{% static 'images/theme-title.png' %}"
+                                        <div class="sppb-addon-single-image-container">
+                                            <img class="sppb-img-responsive" src="{% static 'images/theme-title.png' %}"
                                                 alt="Image" title="" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="sppb-addon-wrapper-1651067718190"
-                            class="sppb-addon-wrapper">
+                        <div id="sppb-addon-wrapper-1651067718190" class="sppb-addon-wrapper">
                             <div id="sppb-addon-1651067718190" class="clearfix ">
-                                <div
-                                    class="sppb-addon sppb-addon-text-block sppb-text-center ">
+                                <div class="sppb-addon sppb-addon-text-block sppb-text-center ">
                                     <!-- <h3 class="sppb-addon-title">Gallery</h3> -->
                                     <div class="sppb-addon-content"></div>
                                 </div>
@@ -54,27 +588,17 @@
                         <div id="section-id-1651067718169" class="sppb-section">
                             <div class="sppb-container-inner">
                                 <div class="sppb-row">
-                                    <div class="sppb-col-md-3"
-                                        id="column-wrap-id-1651067718170">
-                                        <div id="column-id-1651067718170"
-                                            class="sppb-column">
+                                    <div class="sppb-col-md-3" id="column-wrap-id-1651067718170">
+                                        <div id="column-id-1651067718170" class="sppb-column">
                                             <div class="sppb-column-addons">
-                                                <div id="sppb-addon-wrapper-1651067718206"
-                                                    class="sppb-addon-wrapper">
-                                                    <div id="sppb-addon-1651067718206"
-                                                        class="clearfix ">
-                                                        <div
-                                                            class="sppb-addon sppb-addon-raw-html ">
-                                                            <div
-                                                                class="sppb-addon-content">
-                                                                <div
-                                                                    class="team-members team-masonry">
-                                                                    <div
-                                                                        class="masonry-item">
-                                                                        <div
-                                                                            class="member-box">
-                                                                            <div
-                                                                                class="member-photo">
+                                                <div id="sppb-addon-wrapper-1651067718206" class="sppb-addon-wrapper">
+                                                    <div id="sppb-addon-1651067718206" class="clearfix ">
+                                                        <div class="sppb-addon sppb-addon-raw-html ">
+                                                            <div class="sppb-addon-content">
+                                                                <div class="team-members team-masonry">
+                                                                    <div class="masonry-item">
+                                                                        <div class="member-box">
+                                                                            <div class="member-photo">
                                                                                 <img src="{% static 'images/member1.jpg' %}"
                                                                                     alt="Member Photo">
                                                                             </div>
@@ -128,27 +652,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="sppb-col-md-3"
-                                        id="column-wrap-id-1651067718175">
-                                        <div id="column-id-1651067718175"
-                                            class="sppb-column">
+                                    <div class="sppb-col-md-3" id="column-wrap-id-1651067718175">
+                                        <div id="column-id-1651067718175" class="sppb-column">
                                             <div class="sppb-column-addons">
-                                                <div id="sppb-addon-wrapper-1651067718211"
-                                                    class="sppb-addon-wrapper">
-                                                    <div id="sppb-addon-1651067718211"
-                                                        class="clearfix ">
-                                                        <div
-                                                            class="sppb-addon sppb-addon-raw-html ">
-                                                            <div
-                                                                class="sppb-addon-content">
-                                                                <div
-                                                                    class="team-members team-masonry">
-                                                                    <div
-                                                                        class="masonry-item">
-                                                                        <div
-                                                                            class="member-box">
-                                                                            <div
-                                                                                class="member-photo">
+                                                <div id="sppb-addon-wrapper-1651067718211" class="sppb-addon-wrapper">
+                                                    <div id="sppb-addon-1651067718211" class="clearfix ">
+                                                        <div class="sppb-addon sppb-addon-raw-html ">
+                                                            <div class="sppb-addon-content">
+                                                                <div class="team-members team-masonry">
+                                                                    <div class="masonry-item">
+                                                                        <div class="member-box">
+                                                                            <div class="member-photo">
                                                                                 <img src="{% static 'images/member2.jpg' %}"
                                                                                     alt="Member Photo">
                                                                             </div>
@@ -202,27 +716,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="sppb-col-md-3"
-                                        id="column-wrap-id-1651067718176">
-                                        <div id="column-id-1651067718176"
-                                            class="sppb-column">
+                                    <div class="sppb-col-md-3" id="column-wrap-id-1651067718176">
+                                        <div id="column-id-1651067718176" class="sppb-column">
                                             <div class="sppb-column-addons">
-                                                <div id="sppb-addon-wrapper-1651067718216"
-                                                    class="sppb-addon-wrapper">
-                                                    <div id="sppb-addon-1651067718216"
-                                                        class="clearfix ">
-                                                        <div
-                                                            class="sppb-addon sppb-addon-raw-html ">
-                                                            <div
-                                                                class="sppb-addon-content">
-                                                                <div
-                                                                    class="team-members team-masonry">
-                                                                    <div
-                                                                        class="masonry-item">
-                                                                        <div
-                                                                            class="member-box">
-                                                                            <div
-                                                                                class="member-photo">
+                                                <div id="sppb-addon-wrapper-1651067718216" class="sppb-addon-wrapper">
+                                                    <div id="sppb-addon-1651067718216" class="clearfix ">
+                                                        <div class="sppb-addon sppb-addon-raw-html ">
+                                                            <div class="sppb-addon-content">
+                                                                <div class="team-members team-masonry">
+                                                                    <div class="masonry-item">
+                                                                        <div class="member-box">
+                                                                            <div class="member-photo">
                                                                                 <img src="{% static 'images/member3.jpg' %}"
                                                                                     alt="Member Photo">
                                                                             </div>
@@ -276,27 +780,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="sppb-col-md-3"
-                                        id="column-wrap-id-1651067718177">
-                                        <div id="column-id-1651067718177"
-                                            class="sppb-column">
+                                    <div class="sppb-col-md-3" id="column-wrap-id-1651067718177">
+                                        <div id="column-id-1651067718177" class="sppb-column">
                                             <div class="sppb-column-addons">
-                                                <div id="sppb-addon-wrapper-1651067718182"
-                                                    class="sppb-addon-wrapper">
-                                                    <div id="sppb-addon-1651067718182"
-                                                        class="clearfix ">
-                                                        <div
-                                                            class="sppb-addon sppb-addon-raw-html ">
-                                                            <div
-                                                                class="sppb-addon-content">
-                                                                <div
-                                                                    class="team-members team-masonry">
-                                                                    <div
-                                                                        class="masonry-item">
-                                                                        <div
-                                                                            class="member-box">
-                                                                            <div
-                                                                                class="member-photo">
+                                                <div id="sppb-addon-wrapper-1651067718182" class="sppb-addon-wrapper">
+                                                    <div id="sppb-addon-1651067718182" class="clearfix ">
+                                                        <div class="sppb-addon sppb-addon-raw-html ">
+                                                            <div class="sppb-addon-content">
+                                                                <div class="team-members team-masonry">
+                                                                    <div class="masonry-item">
+                                                                        <div class="member-box">
+                                                                            <div class="member-photo">
                                                                                 <img src="{% static 'images/member4.jpg' %}"
                                                                                     alt="Member Photo">
                                                                             </div>
@@ -353,40 +847,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="sppb-addon-wrapper-1651067718249"
-                            class="sppb-addon-wrapper">
+                        <div id="sppb-addon-wrapper-1651067718249" class="sppb-addon-wrapper">
                             <div id="sppb-addon-1651067718249" class="clearfix ">
-                                <div
-                                    class="sppb-addon sppb-addon-raw-html sppb-text-center">
-                                    <div class="sppb-addon-content"><a
-                                            class="btn btn_secondary" href="#!">See
+                                <div class="sppb-addon sppb-addon-raw-html sppb-text-center">
+                                    <div class="sppb-addon-content"><a class="btn btn_secondary" href="#!">See
                                             More</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div id="sppb-addon-wrapper-1651090826161"
-                            class="sppb-addon-wrapper">
+                        <div id="sppb-addon-wrapper-1651090826161" class="sppb-addon-wrapper">
                             <div id="sppb-addon-1651090826161" class="clearfix ">
-                                <div
-                                    class="sppb-addon sppb-addon-single-image sppb-text-center ">
+                                <div class="sppb-addon sppb-addon-single-image sppb-text-center ">
                                     <div class="sppb-addon-content">
-                                        <div
-                                            class="sppb-addon-single-image-container">
-                                            <img class="sppb-img-responsive"
-                                                src="{% static 'images/theme-title.png' %}"
+                                        <div class="sppb-addon-single-image-container">
+                                            <img class="sppb-img-responsive" src="{% static 'images/theme-title.png' %}"
                                                 alt="Image" title="" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+{% endcomment %}
 
 {% endblock %}

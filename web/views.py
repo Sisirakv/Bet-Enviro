@@ -274,3 +274,9 @@ def wt_accessories(request):
 
 def resetting(request):
     return render(request,'web/after sale/resetting.html')
+
+
+
+
+def locate(request):
+    return render(request,'web/locate ur service.html')

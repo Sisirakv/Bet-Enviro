@@ -105,4 +105,8 @@ urlpatterns = [
 
 
 
+
+
+    path('Locate Service/',views.locate,name="Locate Service")
+
 ]

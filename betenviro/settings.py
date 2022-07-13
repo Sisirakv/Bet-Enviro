@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'web',
+    'versatileimagefield',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +106,31 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
+
+VERSATILEIMAGEFIELD_SETTINGS = {
+    
+    'cache_length': 2592000,
+    
+    'cache_name': 'versatileimagefield_cache',
+    
+    'jpeg_resize_quality': 70,
+    
+    'sized_directory_name': '__sized__',
+    
+    'filtered_directory_name': '__filtered__',
+    
+    'placeholder_directory_name': '__placeholder__',
+    
+    'create_images_on_demand': True,
+    
+    'image_key_post_processor': None,
+    
+    'progressive_jpeg': False
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -133,3 +161,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'Bootstrap5'

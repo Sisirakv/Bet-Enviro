@@ -519,30 +519,12 @@
                                 <div class="sppb-addon sppb-addon-gallery ">
                                     <div class="sppb-addon-content">
                                         <ul class="sppb-gallery clearfix gallery-item-left">
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_1.jpg' %} "
+                                            {% for image in image %}
+                                            <li><a href=" {{image.image.crop.350x290}} "
                                                     class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_1.jpg' %} " alt=""
+                                                        src=" {{image.image.crop.350x290}} " alt=""
                                                         loading="lazy"></a></li>
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_2.jpg' %} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_2.jpg' %} " alt=""
-                                                        loading="lazy"></a></li>
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_3.jpg' %} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_3.jpg' %} " alt=""
-                                                        loading="lazy"></a></li>
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_4.jpg' %} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_4.jpg' %} " alt=""
-                                                        loading="lazy"></a></li>
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_5.jpg' %} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_5.jpg' %} " alt=""
-                                                        loading="lazy"></a></li>
-                                            <li><a href=" {% static 'images/portfolio_gallery_img_6.jpg' %} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {% static 'images/portfolio_gallery_img_6.jpg' %} " alt=""
-                                                        loading="lazy"></a></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>

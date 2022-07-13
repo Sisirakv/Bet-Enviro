@@ -108,9 +108,14 @@ urlpatterns = [
     path('Rain Water Harvesting/',views.rain_water_harvesting,name="Rain Water Harvesting"),
     path('WR 9 Stage/',views.wr_9_stage,name="WR 9 Stage"),
     path('WR 8 Stage/',views.wr_8_stage,name="WR 8 Stage"),
-    path('WR 4 Stage/',views.wr_4_stage,name="WR 4 Stage")
+    path('WR 4 Stage/',views.wr_4_stage,name="WR 4 Stage"),
+    path('Locate Service/',views.locate,name="Locate Service")
 
 
 
+
+
+
+    
 
 ]

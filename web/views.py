@@ -298,3 +298,10 @@ def wr_8_stage(request):
 
 def wr_4_stage(request):
     return render(request,'web/rain water harvesting/wr-4stage.html')
+
+
+
+def locate(request):
+    return render(request,'web/locate ur service.html')
+
+

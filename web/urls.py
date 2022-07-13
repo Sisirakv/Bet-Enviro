@@ -101,6 +101,14 @@ urlpatterns = [
     path('WT Chemical/',views.chemical_treatment,name="WT Chemical"),
     path('WT Accessories/',views.wt_accessories,name="WT Accessories"),
     path('Resetting/',views.resetting,name="Resetting"),
+    path('Swimming Pool/',views.swimming_pool,name="Swimming Pool"),
+    path('Skimmer Type/',views.skimmer_type,name="Skimmer Type"),
+    path('Overflow Type/',views.overflow_type,name="Overflow Type"),
+    path('Infinity Type/',views.infinity_type,name="Infinity Type"),
+    path('Rain Water Harvesting/',views.rain_water_harvesting,name="Rain Water Harvesting"),
+    path('WR 9 Stage/',views.wr_9_stage,name="WR 9 Stage"),
+    path('WR 8 Stage/',views.wr_8_stage,name="WR 8 Stage"),
+    path('WR 4 Stage/',views.wr_4_stage,name="WR 4 Stage")
 
 
 

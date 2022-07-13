@@ -274,3 +274,27 @@ def wt_accessories(request):
 
 def resetting(request):
     return render(request,'web/after sale/resetting.html')
+
+def swimming_pool(request):
+    return render(request,'web/swimming pools/swimming-pools.html')
+
+def skimmer_type(request):
+    return render(request,'web/swimming pools/skimmer-type.html')
+
+def overflow_type(request):
+    return render(request,'web/swimming pools/overflow-type.html')
+
+def infinity_type(request):
+    return render(request,'web/swimming pools/infinity-type.html')
+
+def rain_water_harvesting(request):
+    return render(request,'web/rain water harvesting/rain-water-harvesting.html')
+
+def wr_9_stage(request):
+    return render(request,'web/rain water harvesting/wr-9stage.html')
+
+def wr_8_stage(request):
+    return render(request,'web/rain water harvesting/wr-8stage.html')
+
+def wr_4_stage(request):
+    return render(request,'web/rain water harvesting/wr-4stage.html')

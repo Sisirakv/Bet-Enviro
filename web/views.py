@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from web.models import Gallery
+
+from web.forms import reviewForm
 
 # Create your views here.
 def index(request):
@@ -38,18 +41,26 @@ def blog(request):
     return render(request,"web/blog.html",context)
 
 
-
 def contact(request):
-    context = {
-        "is_contact" : True,
-    }
+    forms = reviewForm(request.POST)
+    if request.method == "POST":
+        if forms.is_valid():
+            forms.save()
+            messages.info(request, 'Successfully added')
+            return redirect('contact')
+    else:
+        context= {
+            "is_contact" : True,
+            "forms":forms,
+
+        }
     return render(request,"web/contact.html",context)
 
-
-
 def gallery(request):
+    image = Gallery.objects.all()
     context = {
         "is_gallery" : True,
+        "image": image,
     }
     return render(request,"web/gallery.html",context)
 

@@ -1,6 +1,7 @@
 {% extends 'web/partials/base.html' %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 <style
 nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4NzRhYWViMzkxMTc2NmM1MjgxNTAzNDk0NzJiZmE0ZGMwZDlkZjFiNGIwZTMxN2ExOGY2MTA1NzRmYjIxZmUwMjljNjEzMGEzNzU=">
 .sp-page-builder .page-content #section-id-1628690870556 {
@@ -1044,30 +1045,24 @@ nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4N
                                                                                     <div
                                                                                         class="sppb-addon-content">
                                                                                         <form
-                                                                                            class="sppb-addon-form-builder-form">
+                                                                                            class="sppb-addon-form-builder-form" method="post">{% csrf_token %}
                                                                                             <div
                                                                                                 class="sppb-form-group sppb-form-builder-field-0">
-                                                                                                <input
-                                                                                                    type="text"
-                                                                                                    id="sppb-form-builder-field-0"
-                                                                                                    name="form-builder-item-[name*]"
-                                                                                                    class="sppb-form-control"
-                                                                                                    placeholder="Your Name"
-                                                                                                    required><span
-                                                                                                    class="sppb-form-builder-required">Please
-                                                                                                    fill the
-                                                                                                    required
-                                                                                                    field.</span>
+                                                                                              
+                                                                                                    {{forms.name}}
+                                                                                                    
                                                                                             </div>
                                                                                             <div
                                                                                                 class="sppb-form-group sppb-form-builder-field-1">
-                                                                                                <input
+                                                                                                <!-- <input
                                                                                                     type="email"
                                                                                                     id="sppb-form-builder-field-1"
                                                                                                     name="form-builder-item-[email*]"
                                                                                                     class="sppb-form-control"
                                                                                                     placeholder="Your Email"
-                                                                                                    required><span
+                                                                                                    required> -->
+                                                                                                    {{forms.email}}
+                                                                                                    <span
                                                                                                     class="sppb-form-builder-required">Please
                                                                                                     fill the
                                                                                                     required
@@ -1075,13 +1070,15 @@ nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4N
                                                                                             </div>
                                                                                             <div
                                                                                                 class="sppb-form-group sppb-form-builder-field-2">
-                                                                                                <input
+                                                                                                <!-- <input
                                                                                                     type="text"
                                                                                                     id="sppb-form-builder-field-2"
                                                                                                     name="form-builder-item-[phone*]"
                                                                                                     class="sppb-form-control"
                                                                                                     placeholder="Your Phone"
-                                                                                                    required><span
+                                                                                                    required> -->
+                                                                                                    {{forms.phone}}
+                                                                                                    <span
                                                                                                     class="sppb-form-builder-required">Please
                                                                                                     fill the
                                                                                                     required
@@ -1089,13 +1086,15 @@ nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4N
                                                                                             </div>
                                                                                             <div
                                                                                                 class="sppb-form-group sppb-form-builder-field-3">
-                                                                                                <input
+                                                                                                <!-- <input
                                                                                                     type="text"
                                                                                                     id="sppb-form-builder-field-3"
                                                                                                     name="form-builder-item-[subject*]"
                                                                                                     class="sppb-form-control"
                                                                                                     placeholder="Subject"
-                                                                                                    required><span
+                                                                                                    required> -->
+                                                                                                    {{forms.subject}}
+                                                                                                    <span
                                                                                                     class="sppb-form-builder-required">Please
                                                                                                     fill the
                                                                                                     required
@@ -1103,12 +1102,14 @@ nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4N
                                                                                             </div>
                                                                                             <div
                                                                                                 class="sppb-form-group sppb-form-builder-field-4">
-                                                                                                <textarea
+                                                                                                <!-- <textarea
                                                                                                     name="form-builder-item-[message*]"
                                                                                                     id="sppb-form-builder-field-4"
                                                                                                     class="sppb-form-control not-resize"
                                                                                                     placeholder="Your Message"
-                                                                                                    required></textarea><span
+                                                                                                    required></textarea> -->
+                                                                                                    {{forms.message}}
+                                                                                                    <span
                                                                                                     class="sppb-form-builder-required">Please
                                                                                                     fill the
                                                                                                     required
@@ -1153,6 +1154,7 @@ nonce="MzY4NWQ3YzljOWIyZjc3OWE2NjdkMWE1Y2U3ZWUxYWU3OTgyMzY3YzIwMTE2YTM0MWRlYzc4N
                                                                                                     Message</button>
                                                                                             </div>
                                                                                         </form>
+                                                                                        
                                                                                         <div style="display:none;margin-top:10px;"
                                                                                             class="sppb-ajax-contact-status">
                                                                                         </div>

@@ -53,27 +53,103 @@ def gallery(request):
     }
     return render(request,"web/gallery.html",context)
 
+
+
+
 def water_QT_diag(request):
-    return render(request,"web/wqt&diaganosis.html")
+    return render(request,"web/water quality/wqt&diaganosis.html")
 
 def water_QT(request):
-    return render(request,"web/water-quality-test.html")
+    return render(request,"web/water quality/water-quality-test.html")
 
 def waste_water(request):
-    return render(request,"web/waste-water-treatment.html")
+    return render(request,"web/water quality/waste-water-treatment.html")
+
+
 
 
 def Water_treat(request):
-    return render(request,"web/water-treatment.html")
+    return render(request,"web/water treatment/water-treatment.html")
 
 def water_filter(request):
-    return render(request,"web/water-filter.html")
+    return render(request,"web/water treatment/water filter/water-filter.html")
 
 def sand_filter(request):
-    return render(request,"web/sand-filter.html")
+    return render(request,"web/water treatment/water filter/sand-filter.html")
 
 def carbon_filter(request):
-    return render(request,"web/carbon-filter.html")
+    return render(request,"web/water treatment/water filter/carbon-filter.html")
+
+def iron_filter(request):
+    return render(request,"web/water treatment/water filter/iron-filter.html")
+
+def softner(request):
+    return render(request,"web/water treatment/water filter/softener-hardner.html")
+
+def dmf(request):
+    return render(request,"web/water treatment/water filter/DMF.html")
+
+def tmf(request):
+    return render(request,"web/water treatment/water filter/TMF.html")
+
+
+
+def water_purifier(request):
+    return render(request,"web/water treatment/water purifier/water-purifier.html")
+
+def ro(request):
+    return render(request,"web/water treatment/water purifier/RO.html")
+
+def uf(request):
+    return render(request,"web/water treatment/water purifier/UF.html")
+
+def uv(request):
+    return render(request,"web/water treatment/water purifier/UV.html")
+
+def cartbridge(request):
+    return render(request,"web/water treatment/water purifier/cartbridge.html")
+
+def alkaline(request):
+    return render(request,"web/water treatment/water purifier/alkaline.html")
+
+
+
+
+def germ_removal(request):
+    return render(request,"web/water treatment/germ removal/germ-removal.html")
+
+def ozonator(request):
+    return render(request,"web/water treatment/germ removal/ozonators.html")
+
+def uv_filter(request):
+    return render(request,"web/water treatment/germ removal/uv-filters.html")
+
+def chlorine_diffuser(request):
+    return render(request,"web/water treatment/germ removal/chlorine-diffuser.html")
+
+def chlorine_dozer(request):
+    return render(request,"web/water treatment/germ removal/chlorine-dozer.html")
+
+
+
+def water_dispenser(request):
+    return render(request,"web/water treatment/water dispenser/water-dispenser.html")
+
+def steel_water_dispenser(request):
+    return render(request,"web/water treatment/water dispenser/steel-water-dispenser.html")
+
+def fiber_water_dispenser(request):
+    return render(request,"web/water treatment/water dispenser/fiber-water.html")
+
+def pipeline(request):
+    return render(request,"web/water treatment/pipeline-dirt.html")
+
+def water_atm(request):
+    return render(request,"web/water treatment/water-atms.html")
+
+
+
+
 
 def commercial_ind(request):
     return render(request,"web/commercial and ind/commercial & ind.html")

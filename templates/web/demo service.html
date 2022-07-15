@@ -564,7 +564,7 @@
 
 
 
-
+{% for service in sub_service %}
 <section id="sp-title">
 
 
@@ -574,7 +574,7 @@
             <div class="sp-column ">
                 <div class="sp-page-title" style="background-color: #f4f5f9;">
                     <div class="container">
-                        <h2 class="sp-page-title-heading">{{service.name}}</h2>
+                        <h2 class="sp-page-title-heading">{{service.main_service.name}}</h2>
                     </div>
                 </div>
             </div>
@@ -617,7 +617,7 @@
                                                             data-item-number="3" data-item-number-sm="3"
                                                             data-item-number-xs="1" data-fade="1">
                                                             <div class="sppb-carousel-extended-item"><img
-                                                                    src="{{service.image}}" alt="">
+                                                                    src="{{service.main_service.image.url}}" alt="">
                                                                 <div class="sppb-carousel-extended-content-wrap"></div>
                                                             </div>
                                                             <!-- <div class="sppb-carousel-extended-item"><img
@@ -647,7 +647,7 @@
                                                     <div id="sppb-addon-1651219595861" class="clearfix ">
                                                         <div class="sppb-addon sppb-addon-text-block sppb-text-left ">
 
-                                                            <div class="sppb-addon-content">{{service.description}}</div>
+                                                            <div class="sppb-addon-content">{{service.main_service.description}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -704,7 +704,7 @@
                                                                             <div class="grid-item">
                                                                                 <div
                                                                                     class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project1.jpg' %}"
+                                                                                    <img src="{{service.sub_image.url}}"
                                                                                         alt="Portfolio Image">
                                                                                     <a class="details_link_icon"
                                                                                         href="{% url 'web:Water Filter' %}">
@@ -714,7 +714,7 @@
                                                                                     <div class="item_content">
                                                                                         
                                                                                         <h3 class="item_title">
-                                                                                            Water Filter
+                                                                                            {{service.sub_name}}
                                                                                         </h3>
                                                                                     </div>
                                                                                 </div>
@@ -723,203 +723,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project2.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Water Purifier' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Water Purifier
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project3.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Germ Removal' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Germ Removal
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project4.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Water Dispenser' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Water Dispenser
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project1.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Water ATMs' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Water ATM's
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project1.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Pipeline' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                       
-                                                                                        <h3 class="item_title">
-                                                                                            Pipeline Dirt
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project1.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Swimming Pool' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Swimming Pools
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/tr.png' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap">
-                                                                    <div class="sppb-carousel-extended-description">
-                                                                        <div class="grid masonry_style_1">
-                                                                            <div class="grid-sizer"></div>
-                                                                            <div class="grid-item">
-                                                                                <div
-                                                                                    class="portfolio_fullimage medium_item">
-                                                                                    <img src="{% static 'images/project1.jpg' %}"
-                                                                                        alt="Portfolio Image">
-                                                                                    <a class="details_link_icon"
-                                                                                        href="{% url 'web:Rain Water Harvesting' %}">
-                                                                                        <i
-                                                                                            class="fas fa-arrow-right"></i>
-                                                                                    </a>
-                                                                                    <div class="item_content">
-                                                                                        
-                                                                                        <h3 class="item_title">
-                                                                                            Rain Water Harvesting
-                                                                                        </h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                         
                                                         </div>
                                                     </div>
                                                 </div>
@@ -940,5 +744,5 @@
 
 </section>
 
-
+{% endfor %}
 {% endblock %}

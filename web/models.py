@@ -56,6 +56,9 @@ class Service(models.Model):
     class Meta:
         verbose_name_plural =("service")
 
+    def __str__(self):
+        return self.name
+
 
 class subService(models.Model):
     main_service = models.ForeignKey(Service, on_delete=models.CASCADE)
@@ -65,4 +68,12 @@ class subService(models.Model):
 
     class Meta:
         verbose_name_plural =("Sub service")
+
+
+class Service_locator(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    district = models.CharField(max_length=200)
+    local_area = models.CharField(max_length=200)
  
+    def __str__(self):
+        return self.local_area

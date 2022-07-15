@@ -59,13 +59,16 @@
 
 
                             <div class="article-list articles-leading">
+                                {% for blog in blogs %}
+
+
                                 <div class="article" itemprop="blogPost" itemscope
                                     itemtype="https://schema.org/BlogPosting">
 
 
                                     <div class="article-intro-image float-left">
                                         <a href="blog-details.html">
-                                            <img src=" {% static 'images/p5.jpg' %} " itemprop="thumbnailUrl" width="1200"
+                                            <img src="{{blog.image.crop.860x567}}" itemprop="thumbnailUrl" width="1200"
                                                 height="801" loading="lazy"> </a>
                                     </div>
 
@@ -75,7 +78,7 @@
                                         <div class="article-header">
                                             <h2>
                                                 <a href="blog-details.html">
-                                                    Launched sub-brands for lead developments. </a>
+                                                    {{blog.heading}} </a>
                                             </h2>
 
 
@@ -90,13 +93,13 @@
 
 
                                             <span class="category-name" title="Category: Gardening">
-                                                <a href="blog-list.html">Gardening</a>
+                                                <a href="blog-list.html">{{blog.category}}</a>
                                             </span>
 
 
                                             <span class="published" title="Published: 27 April 2022">
                                                 <time datetime="2022-04-27T20:16:45+00:00">
-                                                    27 April 2022 </time>
+                                                   {{blog.date}} </time>
                                             </span>
 
 
@@ -109,9 +112,7 @@
 
 
                                         <div class="article-introtext">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                                do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua.</p>
+                                            <p>{{blog.content}}</p>
 
 
 
@@ -120,7 +121,15 @@
                                     </div>
 
                                 </div>
-                                <div class="article" itemprop="blogPost" itemscope
+
+
+                                {% endfor %}
+
+
+
+
+
+                                <!-- <div class="article" itemprop="blogPost" itemscope
                                     itemtype="https://schema.org/BlogPosting">
 
 
@@ -308,7 +317,7 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
                             </div>
 
 

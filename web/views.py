@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from web.models import Gallery
+from web.models import Category, Gallery, Product
 
 from web.forms import reviewForm
 
@@ -27,8 +27,12 @@ def services(request):
 
 
 def product(request):
+    category = Category.objects.filter(is_active = True)
+    product = Product.objects.all()
     context = {
         "is_product" : True,
+        "category" : category,
+        "products" : product,
     }
     return render(request,"web/product.html",context)
 

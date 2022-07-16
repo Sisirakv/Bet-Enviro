@@ -186,29 +186,17 @@
                         <div class="sp-module m-5 " style="border: none;">
                             
                             <div class="sp-module-content">
-                                <ul class="mod-articlescategories categories-module mod-list d-flex" >
-                                    <li class="active" style="margin: 20px;"> <a href="#" style="padding: 20px;line-height: 20px;">
-                                            All</a>
+                                                     
+                                <ul class="food-menu-filter  mod-articlescategories categories-module mod-list d-flex ">
+                                    <li class="active" data-filter="*" style="padding: 30px;line-height: 20px;">All</li>&nbsp;
+                                    {% for category in category %}
+                                    <li data-filter=".{{category.category_name|slugify}}" style="padding: 20px;line-height: 20px;">{{category.category_name}}</li>&nbsp;
+                                    {% endfor %}
 
-                                    </li >
-                                    <li class="pr-5" style="margin: 20px;"> <a href="#" style="padding: 20px;line-height: 20px;">
-                                            Water Filters </a>
-
-                                    </li>
-                                    <li style="margin: 20px;"> <a href="#" style="padding: 20px;line-height: 20px;">
-                                            Water Purifiers </a>
-
-                                    </li > 
-                                    <li style="margin: 20px;"> <a href="#" style="padding: 20px;line-height: 20px;">
-                                            Germ Removal </a>
-
-                                    </li>
-                                    <li style="margin: 20px;"> <a href="#" style="padding: 20px;line-height: 20px;">
-                                            Water Dispenser </a>
-
-                                    </li>
                                 </ul>
+
                             </div>
+                            
                         </div>
                     </div>
                 </aside>
@@ -247,8 +235,13 @@
                                 <div id="hikashop_products_switcher_hikashop_category_information_menu_147"
                                     class="hikashop_products " data-consistencyheight=".hikashop_subcontainer"
                                     itemscope="" itemtype="https://schema.org/itemListElement">
-                                    <div class="hk-row-fluid">
-                                        <div class="hkc-md-3 hkc-sm-6 hkc-6 hikashop_product hikashop_product_column_1 hikashop_product_row_1"
+                                   
+                                    <div class="row product-items">
+                                        
+
+
+                                        {% for product in products %}
+                                        <div class="hkc-md-3 hkc-sm-6 hkc-6 hikashop_product hikashop_product_column_1 hikashop_product_row_1 isotop-grid {{product.category.category_name|slugify}}"
                                             itemprop="itemList" itemscope="" itemtype="http://schema.org/ItemList">
                                             <div class="hikashop_container hikashop_zoom_hover">
                                                 <div class="hikashop_subcontainer hikashop_subcontainer_border">
@@ -263,10 +256,10 @@
                                                                     <img class="hikashop_product_listing_image"
                                                                         title="Gardening Artificial Flowers"
                                                                         alt="product2"
-                                                                        src=" {% static 'images/steel-water-dispenser.jpg' %} " />
+                                                                        src="{{product.product_image.url}}" />
                                                                 </a>
                                                                 <meta itemprop="image"
-                                                                    content=" {% static 'images/steel-water-dispenser.jpg' %} " />
+                                                                    content="{{product.product_image.url}}" />
                                                             </div>
                                                         </div>
                                                         <!-- EO IMAGE -->
@@ -334,260 +327,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="hkc-md-3 hkc-sm-6 hkc-6 hikashop_product hikashop_product_column_2 hikashop_product_row_1"
-                                            itemprop="itemList" itemscope="" itemtype="http://schema.org/ItemList">
-                                            <div class="hikashop_container hikashop_zoom_hover">
-                                                <div class="hikashop_subcontainer hikashop_subcontainer_border">
-                                                    <div class="hikashop_listing_img_title"
-                                                        style="padding-bottom: 20px;"
-                                                        id="div_hikashop_category_information_menu_147_2">
-                                                        <!-- IMAGE -->
-                                                        <div class="hikashop_product_image">
-                                                            <div class="hikashop_product_image_subdiv">
-                                                                <a href="main-shop/product/2-green-artificial-flowers.html"
-                                                                    class="">
-                                                                    <img class="hikashop_product_listing_image"
-                                                                        title="Tree Artificial Flowers" alt="product1"
-                                                                        src=" {% static 'images/UVfilter.jpg' %} " />
-                                                                </a>
-                                                                <meta itemprop="image"
-                                                                    content=" {% static 'images/UVfilter.jpg' %} " />
-                                                            </div>
-                                                        </div>
-                                                        <!-- EO IMAGE -->
-
-
-                                                        <!-- CODE -->
-                                                        <span class='hikashop_product_code_list'>
-                                                        </span>
-                                                        <!-- EO CODE -->
-
-                                                        <!-- CUSTOM PRODUCT FIELDS -->
-                                                        <!-- EO CUSTOM PRODUCT FIELDS -->
-
-                                                        <!-- AFTER PRODUCT NAME AREA -->
-                                                        <!-- EO AFTER PRODUCT NAME AREA -->
-
-                                                        <!-- VOTE -->
-                                                        <!-- EO VOTE -->
-
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <!-- SALE END MESSAGE -->
-                                                        <!-- EO SALE END MESSAGE -->
-                                                        <!-- SALE START MESSAGE -->
-                                                        <!-- EO SALE START MESSAGE -->
-                                                        <!-- STOCK MESSAGE -->
-                                                        <span class="hikashop_product_stock_count">
-                                                        </span>
-                                                        <!-- EO STOCK MESSAGE -->
-                                                        <!-- WAITLIST BUTTON -->
-                                                        <!-- EO WAITLIST BUTTON -->
-
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <!-- EO QUANTITY INPUT -->
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <button type="button" class="hikabtn hikacart"
-                                                            onclick="if(window.hikashop.addToCart) { return window.hikashop.addToCart(this); }"
-                                                            data-addToCart="2"
-                                                            data-addTo-div="hikashop_category_information_menu_147"
-                                                            data-addTo-class="add_in_progress"
-                                                            data-href="static/shop/main-shop/product/updatecart/add-1/cid-2"><span>Enquire
-                                                                Now</span></button>
-                                                        <!-- EO ADD TO CART BUTTON -->
-                                                        <!-- WISHLIST BUTTON -->
-                                                        <!-- EO WISHLIST BUTTON -->
-                                                        <!-- CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO ADD TO CART BUTTON -->
-
-                                                        <!-- COMPARISON -->
-                                                        <!-- EO COMPARISON -->
-
-                                                        <!-- CONTACT US BUTTON -->
-
-                                                        <!-- EO CONTACT US BUTTON -->
-
-                                                        <!-- PRODUCT DETAILS BUTTON -->
-
-                                                        <!-- EO PRODUCT DETAILS BUTTON -->
-
-                                                        <meta itemprop="url"
-                                                            content="static/shop/main-shop/product/2-green-artificial-flowers">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="hkc-md-3 hkc-sm-6 hkc-6 hikashop_product hikashop_product_column_3 hikashop_product_row_1"
-                                            itemprop="itemList" itemscope="" itemtype="http://schema.org/ItemList">
-                                            <div class="hikashop_container hikashop_zoom_hover">
-                                                <div class="hikashop_subcontainer hikashop_subcontainer_border">
-                                                    <div class="hikashop_listing_img_title"
-                                                        style="padding-bottom: 20px;"
-                                                        id="div_hikashop_category_information_menu_147_4">
-                                                        <!-- IMAGE -->
-                                                        <div class="hikashop_product_image">
-                                                            <div class="hikashop_product_image_subdiv">
-                                                                <a href="main-shop/product/4-artificial-branch-flowers.html"
-                                                                    class="">
-                                                                    <img class="hikashop_product_listing_image"
-                                                                        title="Artificial branch Flowers "
-                                                                        alt="product4"
-                                                                        src=" {% static 'images/carbon.jpg' %} " />
-                                                                </a>
-                                                                <meta itemprop="image"
-                                                                    content=" {% static 'images/carbon.jpg' %} " />
-                                                            </div>
-                                                        </div>
-                                                        <!-- EO IMAGE -->
-
-
-                                                        <!-- CODE -->
-                                                        <span class='hikashop_product_code_list'>
-                                                        </span>
-                                                        <!-- EO CODE -->
-
-                                                        <!-- CUSTOM PRODUCT FIELDS -->
-                                                        <!-- EO CUSTOM PRODUCT FIELDS -->
-
-                                                        <!-- AFTER PRODUCT NAME AREA -->
-                                                        <!-- EO AFTER PRODUCT NAME AREA -->
-
-                                                        <!-- VOTE -->
-                                                        <!-- EO VOTE -->
-
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <!-- SALE END MESSAGE -->
-                                                        <!-- EO SALE END MESSAGE -->
-                                                        <!-- SALE START MESSAGE -->
-                                                        <!-- EO SALE START MESSAGE -->
-                                                        <!-- STOCK MESSAGE -->
-                                                        <span class="hikashop_product_stock_count">
-                                                        </span>
-                                                        <!-- EO STOCK MESSAGE -->
-                                                        <!-- WAITLIST BUTTON -->
-                                                        <!-- EO WAITLIST BUTTON -->
-
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <!-- EO QUANTITY INPUT -->
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <button type="button" class="hikabtn hikacart"
-                                                            onclick="if(window.hikashop.addToCart) { return window.hikashop.addToCart(this); }"
-                                                            data-addToCart="4"
-                                                            data-addTo-div="hikashop_category_information_menu_147"
-                                                            data-addTo-class="add_in_progress"
-                                                            data-href="static/shop/main-shop/product/updatecart/add-1/cid-4"><span>Enquire
-                                                                Now</span></button>
-                                                        <!-- EO ADD TO CART BUTTON -->
-                                                        <!-- WISHLIST BUTTON -->
-                                                        <!-- EO WISHLIST BUTTON -->
-                                                        <!-- CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO ADD TO CART BUTTON -->
-
-                                                        <!-- COMPARISON -->
-                                                        <!-- EO COMPARISON -->
-
-                                                        <!-- CONTACT US BUTTON -->
-
-                                                        <!-- EO CONTACT US BUTTON -->
-
-                                                        <!-- PRODUCT DETAILS BUTTON -->
-
-                                                        <!-- EO PRODUCT DETAILS BUTTON -->
-
-                                                        <meta itemprop="url"
-                                                            content="static/shop/main-shop/product/4-artificial-branch-flowers">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="hkc-md-3 hkc-sm-6 hkc-6 hikashop_product hikashop_product_column_4 hikashop_product_row_1"
-                                            itemprop="itemList" itemscope="" itemtype="http://schema.org/ItemList">
-                                            <div class="hikashop_container hikashop_zoom_hover">
-                                                <div class="hikashop_subcontainer hikashop_subcontainer_border">
-                                                    <div class="hikashop_listing_img_title"
-                                                        style="padding-bottom: 20px;"
-                                                        id="div_hikashop_category_information_menu_147_5">
-                                                        <!-- IMAGE -->
-                                                        <div class="hikashop_product_image">
-                                                            <div class="hikashop_product_image_subdiv">
-                                                                <a href="main-shop/product/5-round-artificial-flowers.html"
-                                                                    class="">
-                                                                    <img class="hikashop_product_listing_image"
-                                                                        title="Round Artificial Flowers" alt="product3"
-                                                                        src=" {% static 'images/chlorine-diffuser.jpg' %} " />
-                                                                </a>
-                                                                <meta itemprop="image"
-                                                                    content=" {% static 'images/chlorine-diffuser.jpg' %} " />
-                                                            </div>
-                                                        </div>
-                                                        <!-- EO IMAGE -->
-
-
-
-                                                        <!-- CODE -->
-                                                        <span class='hikashop_product_code_list'>
-                                                        </span>
-                                                        <!-- EO CODE -->
-
-                                                        <!-- CUSTOM PRODUCT FIELDS -->
-                                                        <!-- EO CUSTOM PRODUCT FIELDS -->
-
-                                                        <!-- AFTER PRODUCT NAME AREA -->
-                                                        <!-- EO AFTER PRODUCT NAME AREA -->
-
-                                                        <!-- VOTE -->
-                                                        <!-- EO VOTE -->
-
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <!-- SALE END MESSAGE -->
-                                                        <!-- EO SALE END MESSAGE -->
-                                                        <!-- SALE START MESSAGE -->
-                                                        <!-- EO SALE START MESSAGE -->
-                                                        <!-- STOCK MESSAGE -->
-                                                        <span class="hikashop_product_stock_count">
-                                                        </span>
-                                                        <!-- EO STOCK MESSAGE -->
-                                                        <!-- WAITLIST BUTTON -->
-                                                        <!-- EO WAITLIST BUTTON -->
-
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <!-- EO QUANTITY INPUT -->
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <button type="button" class="hikabtn hikacart"
-                                                            onclick="if(window.hikashop.addToCart) { return window.hikashop.addToCart(this); }"
-                                                            data-addToCart="5"
-                                                            data-addTo-div="hikashop_category_information_menu_147"
-                                                            data-addTo-class="add_in_progress"
-                                                            data-href="static/shop/main-shop/product/updatecart/add-1/cid-5"><span>Enquire
-                                                                Now</span></button>
-                                                        <!-- EO ADD TO CART BUTTON -->
-                                                        <!-- WISHLIST BUTTON -->
-                                                        <!-- EO WISHLIST BUTTON -->
-                                                        <!-- CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO ADD TO CART BUTTON -->
-
-                                                        <!-- COMPARISON -->
-                                                        <!-- EO COMPARISON -->
-
-                                                        <!-- CONTACT US BUTTON -->
-
-                                                        <!-- EO CONTACT US BUTTON -->
-
-                                                        <!-- PRODUCT DETAILS BUTTON -->
-
-                                                        <!-- EO PRODUCT DETAILS BUTTON -->
-
-                                                        <meta itemprop="url"
-                                                            content="static/shop/main-shop/product/5-round-artificial-flowers">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
+                                        {% endfor %}
+                                       
                                     </div>
+                                    
+
+
+
                                     <div style="clear:both"></div>
                                 </div>
                                 <form action="https://greelan.themes-pro.com/shop/main-shop" method="post"
@@ -637,6 +383,10 @@
 
 
 
+
+
+
+
 <script
     nonce="OTI2MjgzMWY2MWI4ZjMzYjg5MmY5MzU5Y2U4MGViNDY5NzJhMTNlNzRlNGZiMGI4YjE4OGUwMjEyNmNlZTA4NTAwODQyYjEzODJkOGRkNTUzYzUzZTFmZTYxMjVmNTAyMWZhYjEyYmEzNDQ5NTkxZjI4N2I4MmUxMDBjODJhY2Q=">
         if (!window.localPage) window.localPage = {};
@@ -659,4 +409,23 @@
         jQuery.notify.defaults({ "arrowShow": false, "globalPosition": "top right", "elementPosition": "top right", "clickToHide": true, "autoHideDelay": 5000, "autoHide": true });
         window.cartNotifyParams = { "reference": "global", "img_url": "\/media\/com_hikashop\/images\/icons\/icon-32-newproduct.png", "redirect_url": "", "redirect_delay": 4000, "hide_delay": 5000, "title": "Product added to the cart", "text": "Product successfully added to the cart", "wishlist_title": "Product added to the wishlist", "wishlist_text": "Product successfully added to the wishlist", "list_title": "Products added to the cart", "list_text": "Products successfully added to the cart", "list_wishlist_title": "Products added to the wishlist", "list_wishlist_text": "Products successfully added to the wishlist", "err_title": "Product not added to the cart", "err_text": "Product not added to the cart", "err_wishlist_title": "Product not added to the wishlist", "err_wishlist_text": "Product not added to the wishlist" };
     </script>
+
+<script>
+    function categorys(category){
+        
+        $('.ProductList').children().hide()
+        $("."+category).show()
+       
+
+    }
+</script>
+
+<!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
+{% endblock %}
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="{% static 'components/com_sppagebuilder/assets/js/imageload.js' %}"></script>
+<script src="{% static 'components/com_sppagebuilder/assets/js/isotop.js' %}"></script>
+<script src="{% static 'components/com_sppagebuilder/assets/js/custom.js' %}"></script>
 {% endblock %}

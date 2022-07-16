@@ -1,3 +1,7 @@
+from django.shortcuts import render
+from web.models import Category, Gallery, Product
+
+from web.forms import reviewForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -39,8 +43,12 @@ def services(request):
 
 
 def product(request):
+    category = Category.objects.filter(is_active = True)
+    product = Product.objects.all()
     context = {
         "is_product" : True,
+        "category" : category,
+        "products" : product,
     }
     return render(request,"web/product.html",context)
 

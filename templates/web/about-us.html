@@ -2674,54 +2674,15 @@
                                                         <div class="sppb-addon sppb-addon-raw-html ">
                                                             <div class="sppb-addon-content">
                                                                 <div class="partner-logo-grid">
+																	{% for image in client %}
                                                                     <div class="single-partner">
                                                                         <a href="#!">
-                                                                            <img src=" {% static 'images/cl1.png' %} "
+                                                                            <img src=" {{ image.image.crop.200x53 }} "
                                                                                 alt="Partner">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl2.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl3.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl4.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl5.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl6.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl7.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl8.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
+																	{% endfor %}
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>

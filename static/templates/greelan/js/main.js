@@ -348,3 +348,25 @@ jQuery(function ($) {
 		}
 	});
 });
+
+
+
+
+
+$('#form').submit(function(form_value){
+    var data=$(this).serializeArray();
+    $.ajax({
+        url:"http://127.0.0.1:8000/ajax/",
+        method:'POST',
+        data:data,
+        success: function(){  
+            swal("Successfully Submitted!", "Message successfully updated", "success")
+            $('#form').trigger("reset")
+        },
+        error: function() { 
+            swal("Error!", "Form validation error", "error") 
+        }       
+    })
+    return false
+      
+})

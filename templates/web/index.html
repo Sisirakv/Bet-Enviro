@@ -1221,6 +1221,7 @@
                                                 <div id="section-id-1651067718169" class="sppb-section">
                                                     <div class="sppb-container-inner">
                                                         <div class="sppb-row">
+                                                            {% for image in gallery %}
                                                             <div class="sppb-col-md-3 col-md-3 col-lg-6 col-sm-6 col-6"
                                                                 id="column-wrap-id-1651067718170">
                                                                 <div id="column-id-1651067718170"
@@ -1242,49 +1243,10 @@
                                                                                                     class="member-box">
                                                                                                     <div
                                                                                                         class="member-photo">
-                                                                                                        <img src="{% static 'images/member1.jpg' %}"
+                                                                                                        <img src=" {{image.image.crop.300x367}} "
                                                                                                             alt="Member Photo">
                                                                                                     </div>
-                                                                                                    <!-- <div
-                                                                                                        class="member-info">
-                                                                                                        <h5
-                                                                                                            class="name">
-                                                                                                            <a
-                                                                                                                href="#!">Charles
-                                                                                                                Brown</a>
-                                                                                                        </h5>
-                                                                                                        <p
-                                                                                                            class="title">
-                                                                                                            Gardener
-                                                                                                        </p>
-                                                                                                        <ul
-                                                                                                            class="social-links">
-                                                                                                            <li
-                                                                                                                class="facebook">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-facebook-f"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="twitter">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-twitter"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="youtube">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-youtube"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="behance">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-behance"></i></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </div> -->
+                                                                                                    
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -1295,228 +1257,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="sppb-col-md-3 col-md-3 col-lg-6 col-sm-6 col-6"
-                                                                id="column-wrap-id-1651067718175">
-                                                                <div id="column-id-1651067718175"
-                                                                    class="sppb-column">
-                                                                    <div class="sppb-column-addons">
-                                                                        <div id="sppb-addon-wrapper-1651067718211"
-                                                                            class="sppb-addon-wrapper">
-                                                                            <div id="sppb-addon-1651067718211"
-                                                                                class="clearfix ">
-                                                                                <div
-                                                                                    class="sppb-addon sppb-addon-raw-html ">
-                                                                                    <div
-                                                                                        class="sppb-addon-content">
-                                                                                        <div
-                                                                                            class="team-members team-masonry">
-                                                                                            <div
-                                                                                                class="masonry-item">
-                                                                                                <div
-                                                                                                    class="member-box">
-                                                                                                    <div
-                                                                                                        class="member-photo">
-                                                                                                        <img src="{% static 'images/member2.jpg' %}"
-                                                                                                            alt="Member Photo">
-                                                                                                    </div>
-                                                                                                    <!-- <div
-                                                                                                        class="member-info">
-                                                                                                        <h5
-                                                                                                            class="name">
-                                                                                                            <a
-                                                                                                                href="#!">Arnat
-                                                                                                                Dotan</a>
-                                                                                                        </h5>
-                                                                                                        <p
-                                                                                                            class="title">
-                                                                                                            Gardener
-                                                                                                        </p>
-                                                                                                        <ul
-                                                                                                            class="social-links">
-                                                                                                            <li
-                                                                                                                class="facebook">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-facebook-f"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="twitter">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-twitter"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="youtube">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-youtube"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="behance">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-behance"></i></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </div> -->
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-col-md-3 col-md-3 col-lg-6 col-sm-6 col-6"
-                                                                id="column-wrap-id-1651067718176">
-                                                                <div id="column-id-1651067718176"
-                                                                    class="sppb-column">
-                                                                    <div class="sppb-column-addons">
-                                                                        <div id="sppb-addon-wrapper-1651067718216"
-                                                                            class="sppb-addon-wrapper">
-                                                                            <div id="sppb-addon-1651067718216"
-                                                                                class="clearfix ">
-                                                                                <div
-                                                                                    class="sppb-addon sppb-addon-raw-html ">
-                                                                                    <div
-                                                                                        class="sppb-addon-content">
-                                                                                        <div
-                                                                                            class="team-members team-masonry">
-                                                                                            <div
-                                                                                                class="masonry-item">
-                                                                                                <div
-                                                                                                    class="member-box">
-                                                                                                    <div
-                                                                                                        class="member-photo">
-                                                                                                        <img src="{% static 'images/member3.jpg' %}"
-                                                                                                            alt="Member Photo">
-                                                                                                    </div>
-                                                                                                    <!-- <div
-                                                                                                        class="member-info">
-                                                                                                        <h5
-                                                                                                            class="name">
-                                                                                                            <a
-                                                                                                                href="#!">Charles
-                                                                                                                Crew</a>
-                                                                                                        </h5>
-                                                                                                        <p
-                                                                                                            class="title">
-                                                                                                            Gardener
-                                                                                                        </p>
-                                                                                                        <ul
-                                                                                                            class="social-links">
-                                                                                                            <li
-                                                                                                                class="facebook">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-facebook-f"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="twitter">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-twitter"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="youtube">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-youtube"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="behance">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-behance"></i></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </div> -->
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="sppb-col-md-3 col-md-3 col-lg-6 col-sm-6 col-6"
-                                                                id="column-wrap-id-1651067718177">
-                                                                <div id="column-id-1651067718177"
-                                                                    class="sppb-column">
-                                                                    <div class="sppb-column-addons">
-                                                                        <div id="sppb-addon-wrapper-1651067718182"
-                                                                            class="sppb-addon-wrapper">
-                                                                            <div id="sppb-addon-1651067718182"
-                                                                                class="clearfix ">
-                                                                                <div
-                                                                                    class="sppb-addon sppb-addon-raw-html ">
-                                                                                    <div
-                                                                                        class="sppb-addon-content">
-                                                                                        <div
-                                                                                            class="team-members team-masonry">
-                                                                                            <div
-                                                                                                class="masonry-item">
-                                                                                                <div
-                                                                                                    class="member-box">
-                                                                                                    <div
-                                                                                                        class="member-photo">
-                                                                                                        <img src="{% static 'images/member4.jpg' %}"
-                                                                                                            alt="Member Photo">
-                                                                                                    </div>
-                                                                                                    <!-- <div
-                                                                                                        class="member-info">
-                                                                                                        <h5
-                                                                                                            class="name">
-                                                                                                            <a
-                                                                                                                href="#!">Doroty
-                                                                                                                Helen</a>
-                                                                                                        </h5>
-                                                                                                        <p
-                                                                                                            class="title">
-                                                                                                            Gardener
-                                                                                                        </p>
-                                                                                                        <ul
-                                                                                                            class="social-links">
-                                                                                                            <li
-                                                                                                                class="facebook">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-facebook-f"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="twitter">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-twitter"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="youtube">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-youtube"></i></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="behance">
-                                                                                                                <a
-                                                                                                                    href="#"><i
-                                                                                                                        class="fab fa-behance"></i></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </div> -->
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                           {% endfor %}
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1565,54 +1307,16 @@
                                                         <div class="sppb-addon sppb-addon-raw-html ">
                                                             <div class="sppb-addon-content">
                                                                 <div class="partner-logo-grid">
+
+                                                                    {% for image in client %}
                                                                     <div class="single-partner">
                                                                         <a href="#!">
-                                                                            <img src=" {% static 'images/cl1.png' %} "
+                                                                            <img src=" {{ image.image.crop.200x53 }} "
                                                                                 alt="Partner">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl2.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl3.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl4.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl5.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl6.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl7.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="single-partner">
-                                                                        <a href="#!">
-                                                                            <img src=" {% static 'images/cl8.png' %} "
-                                                                                alt="Partner">
-                                                                        </a>
-                                                                    </div>
+                                                                    {% endfor %}
+                                                                   
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1625,7 +1329,7 @@
                                                         <div
                                                             class="sppb-addon sppb-addon-raw-html sppb-text-center">
                                                             <div class="sppb-addon-content"><a
-                                                                    class="btn btn_secondary" href="#!">See
+                                                                    class="btn btn_secondary" href="{% url 'web:clients' %}">See
                                                                     More</a></div>
                                                         </div>
                                                     </div>

@@ -2,25 +2,41 @@ from django.shortcuts import render
 from web.models import Category, Gallery, Product
 
 from web.forms import reviewForm
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .models import *
+from django.views.decorators.csrf import csrf_exempt
+from .forms import contact_form
+import json
 
 # Create your views here.
 def index(request):
+    gallery = Gallery.objects.all()[:4]
+    client = Client.objects.all()[:8]
     context = {
         "is_index" : True,
+        "gallery" : gallery,
+        "client" : client,
     }
     return render(request,"web/index.html",context)
 
 
 def about_us(request):
+    client = Client.objects.all()[:8]
     context = {
         "is_about_us" : True,
+        "client" : client
     }
     return render(request,"web/about-us.html",context)
 
 
 def services(request):
+    service = Service.objects.all()
     context = {
         "is_services" : True,
+        "service" : service,
+    
     }
     return render(request,"web/services.html",context)
 
@@ -39,19 +55,37 @@ def product(request):
 
 
 def blog(request):
+    blog = Blog.objects.all() 
     context = {
         "is_blog" : True,
+        "blogs" : blog,
     }
     return render(request,"web/blog.html",context)
 
-
+@csrf_exempt
 def contact(request):
-    forms = reviewForm(request.POST)
+    forms = contact_form(request.POST or None)
     if request.method == "POST":
+        print('hi')
+        print(forms.errors) 
         if forms.is_valid():
-            forms.save()
-            messages.info(request, 'Successfully added')
-            return redirect('contact')
+            data = forms.save(commit=False)
+            data.referral = "web"
+            data.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Message successfully submitted"
+            }
+            
+            
+        else:
+            response_data = {
+                "status": "false",
+                "title": "Form validation error",
+                "message": repr(forms.errors)
+            }
+        return HttpResponse(json.dumps(response_data), content_type='application/javascript')
     else:
         context= {
             "is_contact" : True,
@@ -59,6 +93,7 @@ def contact(request):
 
         }
     return render(request,"web/contact.html",context)
+
 
 def gallery(request):
     image = Gallery.objects.all()
@@ -69,7 +104,26 @@ def gallery(request):
     return render(request,"web/gallery.html",context)
 
 
+def client(request):
+    client = Client.objects.all()
+    context = {
+        "client": client,
+    }
+    return render(request,"web/our clients.html",context)
 
+
+def demo_services(request):
+    
+    sub_service = subService.objects.all()
+    context = {
+        "is_services" : True,
+        
+        "sub_service" : sub_service
+    }
+    return render(request,"web/demo service.html",context)
+
+
+    
 
 def water_QT_diag(request):
     return render(request,"web/water quality/wqt&diaganosis.html")

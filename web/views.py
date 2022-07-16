@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from web.models import Category, Gallery, Product
 
-from web.forms import reviewForm
+
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse

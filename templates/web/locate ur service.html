@@ -92,25 +92,25 @@
                                                 <div class="sppb-form-group sppb-form-builder-field-0">
                                                     <select class="form-select" aria-label="Default select example">
                                                         <option selected>Select the Service</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        {% for services in service %}
+                                                        <option value="1">{{services.service}}</option>
+                                                        {% endfor %}
                                                     </select>
                                                 </div>
                                                 <div class="sppb-form-group sppb-form-builder-field-1">
                                                     <select class="form-select" aria-label="Default select example">
                                                         <option selected>Select District</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        {% for services in service %}
+                                                        <option value="1">{{services.district}}</option>
+                                                        {% endfor %}
                                                     </select>
                                                 </div>
                                                 <div class="sppb-form-group sppb-form-builder-field-2">
                                                     <select class="form-select" aria-label="Default select example">
                                                         <option selected>Select Your Area</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        {% for services in service %}
+                                                        <option value="2">{{services.local_area}}</option>
+                                                        {% endfor %}
                                                     </select>
                                                 </div>
 

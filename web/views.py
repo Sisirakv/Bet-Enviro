@@ -371,6 +371,8 @@ def wr_4_stage(request):
 
 
 def locate(request):
-    return render(request,'web/locate ur service.html')
-
-
+    service = Service_locator.objects.all()
+    context = {
+        "service" : service
+    }
+    return render(request,'web/locate ur service.html',context)

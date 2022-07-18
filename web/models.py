@@ -98,3 +98,10 @@ class Service_locator(models.Model):
  
     def __str__(self):
         return self.local_area
+
+
+class Enquiry(models.Model):
+    name = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
+    product_name = models.CharField(max_length=200)
+    quantity = models.IntegerField()

@@ -1,6 +1,7 @@
 {% extends 'web/partials/base.html' %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 
@@ -138,11 +139,12 @@
 </style>
 <style>
     @media (min-width: 375px) and (max-width: 769px) {
-        .hikashop_product_image_subdiv img{
+        .hikashop_product_image_subdiv img {
             padding-left: 0px;
             margin: 0px;
         }
-        .hikabtn.hikacart{
+
+        .hikabtn.hikacart {
             font-size: 10px;
         }
     }
@@ -184,26 +186,28 @@
                 <aside id="sp-right" class="col-lg-4 ">
                     <div class="sp-column ">
                         <div class="sp-module m-5 " style="border: none;">
-                            
+
                             <div class="sp-module-content">
-                                                     
+
                                 <ul class="food-menu-filter  mod-articlescategories categories-module mod-list d-flex ">
-                                    <li class="active" data-filter="*" style="padding: 30px;line-height: 20px;">All</li>&nbsp;
+                                    <li class="active" data-filter="*" style="padding: 30px;line-height: 20px;">All</li>
+                                    &nbsp;
                                     {% for category in category %}
-                                    <li data-filter=".{{category.category_name|slugify}}" style="padding: 20px;line-height: 20px;">{{category.category_name}}</li>&nbsp;
+                                    <li data-filter=".{{category.category_name|slugify}}"
+                                        style="padding: 20px;line-height: 20px;">{{category.category_name}}</li>&nbsp;
                                     {% endfor %}
 
                                 </ul>
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </aside>
             </div>
         </div>
     </div>
-    
+
 
 </section>
 
@@ -235,9 +239,9 @@
                                 <div id="hikashop_products_switcher_hikashop_category_information_menu_147"
                                     class="hikashop_products " data-consistencyheight=".hikashop_subcontainer"
                                     itemscope="" itemtype="https://schema.org/itemListElement">
-                                   
+
                                     <div class="row product-items">
-                                        
+
 
 
                                         {% for product in products %}
@@ -265,115 +269,28 @@
                                                         <!-- EO IMAGE -->
 
 
-
-
-                                                        <!-- CODE -->
-                                                        <span class='hikashop_product_code_list'>
-                                                        </span>
-                                                        <!-- EO CODE -->
-
-                                                        <!-- CUSTOM PRODUCT FIELDS -->
-                                                        <!-- EO CUSTOM PRODUCT FIELDS -->
-
-                                                        <!-- AFTER PRODUCT NAME AREA -->
-                                                        <!-- EO AFTER PRODUCT NAME AREA -->
-
-                                                        <!-- VOTE -->
-                                                        <!-- EO VOTE -->
-
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <!-- SALE END MESSAGE -->
-                                                        <!-- EO SALE END MESSAGE -->
-                                                        <!-- SALE START MESSAGE -->
-                                                        <!-- EO SALE START MESSAGE -->
-                                                        <!-- STOCK MESSAGE -->
-                                                        <span class="hikashop_product_stock_count">
-                                                        </span>
-                                                        <!-- EO STOCK MESSAGE -->
-                                                        <!-- WAITLIST BUTTON -->
-                                                        <!-- EO WAITLIST BUTTON -->
-
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <!-- EO QUANTITY INPUT -->
-                                                        <!-- ADD TO CART BUTTON -->
-                                                        <button type="button" class="hikabtn hikacart"
-                                                            onclick="if(window.hikashop.addToCart) { return window.hikashop.addToCart(this); }"
-                                                            data-addToCart="1"
-                                                            data-addTo-div="hikashop_category_information_menu_147"
-                                                            data-addTo-class="add_in_progress"
-                                                            data-href="static/shop/main-shop/product/updatecart/add-1/cid-1"><span>Enquire
+                                        
+                                                        <button type="button" id="enqrybtn"  class="hikabtn hikacart"
+                                                            ><span>Enquire
                                                                 Now</span></button>
-                                                        <!-- EO ADD TO CART BUTTON -->
-                                                        <!-- WISHLIST BUTTON -->
-                                                        <!-- EO WISHLIST BUTTON -->
-                                                        <!-- CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO CHOOSE OPTIONS BUTTON -->
-                                                        <!-- EO ADD TO CART BUTTON -->
+                             
 
-                                                        <!-- COMPARISON -->
-                                                        <!-- EO COMPARISON -->
-
-                                                        <!-- CONTACT US BUTTON -->
-
-                                                        <!-- EO CONTACT US BUTTON -->
-
-                                                        <!-- PRODUCT DETAILS BUTTON -->
-
-                                                        <!-- EO PRODUCT DETAILS BUTTON -->
-
-                                                        <meta itemprop="url"
-                                                            content="static/shop/main-shop/product/1-gardening-artificial-flowers">
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         {% endfor %}
-                                       
+
                                     </div>
-                                    
 
 
-
-                                    <div style="clear:both"></div>
                                 </div>
-                                <form action="https://greelan.themes-pro.com/shop/main-shop" method="post"
-                                    name="adminForm_hikashop_category_information_menu_147_12_bottom">
-                                    <div class="hikashop_products_pagination hikashop_products_pagination_bottom">
-                                        <div class="list-footer pagination pagination-toolbar clearfix">
-
-                                            <div class="limit">Display #<select id="limit" name="limit"
-                                                    class="chzn-done inputbox" size="1" style="width:70px"
-                                                    onchange="this.form.submit()">
-                                                    <option value="12" selected="selected">12</option>
-                                                    <option value="24">24</option>
-                                                    <option value="36">36</option>
-                                                    <option value="48">48</option>
-                                                    <option value="60">60</option>
-                                                    <option value="0">all</option>
-                                                </select>
-                                            </div>
-                                            <div class="counter"></div>
-                                            <input type="hidden" name="limitstart" value="0" />
-                                        </div> <span class="hikashop_results_counter">
-                                            Results 1 - 8 of 8</span>
-                                    </div>
-                                    <input type="hidden" name="filter_order_hikashop_category_information_menu_147_12"
-                                        value="a.ordering" />
-                                    <input type="hidden"
-                                        name="filter_order_Dir_hikashop_category_information_menu_147_12" value="ASC" />
-                                    <input type="hidden" name="de30a316263f55a39d92ad7cf4fcbf31" value="1">
-                                </form>
+                                
                             </div>
                         </div>
-                        <div class="hikashop_submodules" style="clear:both">
-                        </div>
-                        <!--  HikaShop Component powered by http://www.hikashop.com -->
-                        <!-- version Starter : 4.5.1 [2204291442] -->
-                        <div class="hikashop_footer" style="text-align:center"><a href="http://www.hikashop.com/"
-                                target="_blank" title="HikaShop : Joomla!® Online Store Component">HikaShop , Joomla!®
-                                Online Store Component</a></div>
-
-                    </div>
+                        
+                     
                 </main>
             </div>
         </div>
@@ -387,44 +304,71 @@
 
 
 
-<script
-    nonce="OTI2MjgzMWY2MWI4ZjMzYjg5MmY5MzU5Y2U4MGViNDY5NzJhMTNlNzRlNGZiMGI4YjE4OGUwMjEyNmNlZTA4NTAwODQyYjEzODJkOGRkNTUzYzUzZTFmZTYxMjVmNTAyMWZhYjEyYmEzNDQ5NTkxZjI4N2I4MmUxMDBjODJhY2Q=">
-        if (!window.localPage) window.localPage = {};
-        window.localPage.cartRedirect = function (cid, pid, resp) { window.location = "main-shop/product/listing.html"; };
-        window.localPage.wishlistRedirect = function (cid, pid, resp) { window.location = "../component/hikashop/product/listing.html"; };
-    </script>
-<script
-    nonce="OTI2MjgzMWY2MWI4ZjMzYjg5MmY5MzU5Y2U4MGViNDY5NzJhMTNlNzRlNGZiMGI4YjE4OGUwMjEyNmNlZTA4NTAwODQyYjEzODJkOGRkNTUzYzUzZTFmZTYxMjVmNTAyMWZhYjEyYmEzNDQ5NTkxZjI4N2I4MmUxMDBjODJhY2Q=">template = "greelan";</script>
-<script
-    nonce="OTI2MjgzMWY2MWI4ZjMzYjg5MmY5MzU5Y2U4MGViNDY5NzJhMTNlNzRlNGZiMGI4YjE4OGUwMjEyNmNlZTA4NTAwODQyYjEzODJkOGRkNTUzYzUzZTFmZTYxMjVmNTAyMWZhYjEyYmEzNDQ5NTkxZjI4N2I4MmUxMDBjODJhY2Q=">; (function ($) {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': Joomla.getOptions('csrf.token')
-                }
-            });
-        })(jQuery);
-    </script>
-<script
-    nonce="OTI2MjgzMWY2MWI4ZjMzYjg5MmY5MzU5Y2U4MGViNDY5NzJhMTNlNzRlNGZiMGI4YjE4OGUwMjEyNmNlZTA4NTAwODQyYjEzODJkOGRkNTUzYzUzZTFmZTYxMjVmNTAyMWZhYjEyYmEzNDQ5NTkxZjI4N2I4MmUxMDBjODJhY2Q=">
-        jQuery.notify.defaults({ "arrowShow": false, "globalPosition": "top right", "elementPosition": "top right", "clickToHide": true, "autoHideDelay": 5000, "autoHide": true });
-        window.cartNotifyParams = { "reference": "global", "img_url": "\/media\/com_hikashop\/images\/icons\/icon-32-newproduct.png", "redirect_url": "", "redirect_delay": 4000, "hide_delay": 5000, "title": "Product added to the cart", "text": "Product successfully added to the cart", "wishlist_title": "Product added to the wishlist", "wishlist_text": "Product successfully added to the wishlist", "list_title": "Products added to the cart", "list_text": "Products successfully added to the cart", "list_wishlist_title": "Products added to the wishlist", "list_wishlist_text": "Products successfully added to the wishlist", "err_title": "Product not added to the cart", "err_text": "Product not added to the cart", "err_wishlist_title": "Product not added to the wishlist", "err_wishlist_text": "Product not added to the wishlist" };
-    </script>
 
-<script>
-    function categorys(category){
+
+
+<div class="modal fade" id="exampleModal" aria-hidden="true" 
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalToggleLabel">Enquiry Now</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form method="POST" action="{% url 'web:enquiry' %}" class="sppb-addon-form-builder-form ajax" enctype="multipart/form-data">{% csrf_token %}
+            <div class="modal-body">
+              
+                <label for="recipient-name" class="col-form-label" required>Name: </label>
+                <input type="text" class="form-control" id="recipient-name" required>{{forms.name}}
+
+                <label for="phn-name" class="col-form-label">Phone Number: </label>
+                <input type="text" class="form-control" id="phn-name" required>{{forms.phone}}
+
+                <label for="prdct-name" class="col-form-label">Product name: </label>
+                <input type="text" class="form-control" id="prdct-name" required>{{forms.product_name}}
+
+                <label for="qty-name" class="col-form-label">Quantity: </label>
+                <input type="number" class="form-control" id="qty-name" required>{{forms.quantity}}
+           
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggleLabel" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Submit</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#enqrybtn").click(function () {
         
-        $('.ProductList').children().hide()
-        $("."+category).show()
-       
+            $('#exampleModal').modal('show');
 
-    }
+        });
+
+    });
+
 </script>
 
-<!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
+
+
+
+
+
 {% endblock %}
 
 {% block js %}
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
 <script src="{% static 'components/com_sppagebuilder/assets/js/imageload.js' %}"></script>
 <script src="{% static 'components/com_sppagebuilder/assets/js/isotop.js' %}"></script>
 <script src="{% static 'components/com_sppagebuilder/assets/js/custom.js' %}"></script>

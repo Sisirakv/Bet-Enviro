@@ -42,7 +42,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
-        
+
     class Meta:
         verbose_name_plural =("Product")
 
@@ -94,7 +94,7 @@ class Service_locator(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     district = models.CharField(max_length=200)
     local_area = models.CharField(max_length=200)
-    centre = models.CharField(max_length=200)
+    center = models.CharField(max_length=200, null=True)
  
     def __str__(self):
         return self.local_area

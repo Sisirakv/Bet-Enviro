@@ -113,12 +113,12 @@ def client(request):
 
 
 def demo_services(request):
-    
+    main_service = Service.objects.all()
     sub_service = subService.objects.all()
     context = {
         "is_services" : True,
-        
-        "sub_service" : sub_service
+        "main_service": main_service,
+        "sub_service" : sub_service,
     }
     return render(request,"web/demo service.html",context)
 

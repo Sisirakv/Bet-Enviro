@@ -572,7 +572,7 @@
             <div class="sp-column ">
                 <div class="sp-page-title" style="background-color: #f4f5f9;">
                     <div class="container">
-                        <h2 class="sp-page-title-heading">{{sub_service.main_service.name}}</h2>
+                        <h2 class="sp-page-title-heading">{{main_service.name}}</h2>
                     </div>
                 </div>
             </div>
@@ -602,7 +602,7 @@
                             <div class="sppb-row-container">
                                 <div class="sppb-row">
 
-                                    {% for %}
+                                    
                                     <div class="sppb-col-md-12" id="column-wrap-id-1651219595795">
                                         <div id="column-id-1651219595795" class="sppb-column">
                                             <div class="sppb-column-addons">
@@ -616,24 +616,20 @@
                                                             data-height="600" data-height-sm="400" data-height-xs="300"
                                                             data-item-number="3" data-item-number-sm="3"
                                                             data-item-number-xs="1" data-fade="1">
+                                                            {% for image in main_service %}
                                                             <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/slide1.jpg' %}" alt="">
+                                                                    src="{{image.image.url}}" alt="">
                                                                 <div class="sppb-carousel-extended-content-wrap"></div>
                                                             </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/slide2.jpg' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap"></div>
-                                                            </div>
-                                                            <div class="sppb-carousel-extended-item"><img
-                                                                    src="{% static 'images/slide3.jpg' %}" alt="">
-                                                                <div class="sppb-carousel-extended-content-wrap"></div>
-                                                            </div>
+                                                            {% endfor %}
+                                                           
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </section>
@@ -648,39 +644,7 @@
                                                         <div class="sppb-addon sppb-addon-text-block sppb-text-left ">
 
                                                             <div class="sppb-addon-content">
-                                                                Water is essential for life. The human body consists of
-                                                                70% to 80% of the water that is present in various forms
-                                                                of fluids. Professionals advise people to drink at least
-                                                                eight glasses a day. However, with increased pollution
-                                                                and risks of contaminant water, it has become harder to
-                                                                consume water. There are various kinds of viruses,
-                                                                bacteria, and over 2100 health problems associated with
-                                                                water. The excessive pollution emission through vehicles
-                                                                and other sources also influences the quality of water.
-                                                                Hence, it is crucial to employ appropriate Water
-                                                                purifier services. Water purifiers have undergone
-                                                                several upgrades over the years. While other forms of
-                                                                filtration are available to make water suitable for
-                                                                multi-purpose, additional steps should be taken to
-                                                                safeguard it.
-
-                                                                <br /><br />Our purifiers assist in making water
-                                                                suitable for drinking. While there are filters
-                                                                incorporated in the societies, and plants, by the time
-                                                                water reaches your tap, it may get contaminated.
-                                                                Purifiers reduce the risk of contamination, marginally.
-                                                                If there is any water pollution, our best water purifier
-                                                                service in Karnataka are a perfect solution. You can bet
-                                                                on the performance of the purifiers offered by our water
-                                                                purifier dealers in Kerala. The latest, high-tech
-                                                                machinery and experienced professionals have designed
-                                                                each purifier. There is a wide range of purifiers that
-                                                                offer various functions available in BET; RO, UF, UV,
-                                                                and Cartridge are the prevailing specialties. With the
-                                                                installation of our systems and impeccable services, you
-                                                                will have access to the best quality of water. Explore
-                                                                our collection of purifiers to choose online water
-                                                                purifier service in Kerala.
+                                                                {{main_service.description}}
                                                             </div>
                                                         </div>
                                                     </div>

@@ -42,8 +42,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+        
     class Meta:
-        verbose_name_plural =("Contact")
+        verbose_name_plural =("Product")
 
 class Blog(models.Model):
     image = VersatileImageField('Image',upload_to='images/blog/')

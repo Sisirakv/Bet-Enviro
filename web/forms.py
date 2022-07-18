@@ -5,6 +5,7 @@ from django.forms.widgets import SelectMultiple, TextInput, Textarea, EmailInput
 from .models import Contact
 
 
+
 class contact_form(forms.ModelForm):
     class Meta:
         model = Contact

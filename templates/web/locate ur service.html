@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div id="section-id-1628690870562" class="col-lg-8 sppb-section mt-5">
+    <div id="section-id-1628690870562" class="col-lg-8 sppb-section">
         <div class="sppb-container-inner">
             <div class="row">
                 <div class="sppb-col-md-1">
@@ -75,12 +75,12 @@
                 <div class="sppb-col-md-6 sppp-column-vertical-align" id="column-wrap-id-1628690870564">
                     <div id="column-id-1628690870564" class="sppb-column zindex-top opacity94 sppb-align-items-top">
                         <div class="sppb-column-overlay"></div>
-                        <div class="sppb-column-addons">
+                        <div class="sppb-column-addons" style="padding-top:15px;">
                             <div id="sppb-addon-wrapper-1628690870565" class="sppb-addon-wrapper">
                                 <div id="sppb-addon-1628690870565" class="clearfix ">
                                     <div class="sppb-addon sppb-addon-header sppb-text-left">
                                         <h2 class="sppb-addon-title pb-4">
-                                            Select Your place
+                                            Select Your Place
                                     </div>
                                 </div>
                             </div>
@@ -88,42 +88,53 @@
                                 <div id="sppb-addon-1651225851606" class="clearfix ">
                                     <div class="sppb-addon sppb-addon-form-builder">
                                         <div class="sppb-addon-content">
-                                            <form class="sppb-addon-form-builder-form">
+                                            <form class="sppb-addon-form-builder-form" method="POST">
+                                                {% csrf_token %}
                                                 <div class="sppb-form-group sppb-form-builder-field-0">
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select class="form-select" aria-label="Default select example" name="service" id="services">
                                                         <option selected>Select the Service</option>
-                                                        {% for services in service %}
-                                                        <option value="1">{{services.service}}</option>
+                                                        {% for services in service_name_select %}
+                                                        <option value="{{services.id}}">{{services.name}}</option>
                                                         {% endfor %}
                                                     </select>
                                                 </div>
                                                 <div class="sppb-form-group sppb-form-builder-field-1">
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select class="form-select" aria-label="Default select example" name="district" id="distname">
                                                         <option selected>Select District</option>
-                                                        {% for services in service %}
-                                                        <option value="1">{{services.district}}</option>
+                                                        {% for d in districts %}
+                                                        <option value="{{d.id}}">{{d.district_name}}</option>
                                                         {% endfor %}
                                                     </select>
                                                 </div>
                                                 <div class="sppb-form-group sppb-form-builder-field-2">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Your Area</option>
-                                                        {% for services in service %}
-                                                        <option value="2">{{services.local_area}}</option>
-                                                        {% endfor %}
+                                                  
+                                                    <select class="form-select" aria-label="Default select example" name="service_location" id="local_area">
+                                                        <option selected>Select Local Area</option>
+                                                                     
                                                     </select>
+                                            
+                                                    
                                                 </div>
 
-                                                
-                                                <div class="sppb-form-builder-btn sppb-text-center ">
-                                                    <button type="submit" id="btn-1651225851606"
-                                                        class="sppb-btn sppb-btn-custom sppb-btn-round"
-                                                        aria-label="Send Message"><i class="fa"
-                                                            aria-hidden="true"></i>Search</button>
+                                                <div class="sppb-form-group sppb-form-builder-field-2">
+                                                  
+                                                    <select class="form-select" aria-label="Default select example" name="service_centre" id="centre">
+                                                        <option selected>Select Centre</option>
+                                                        
+                                                        
+                                                        
+                                                    </select>
+                                            
+                                                    
                                                 </div>
+                                                
+
                                             </form>
+                                            
                                             <div style="display:none;margin-top:10px;" class="sppb-ajax-contact-status">
+                                            
                                             </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -141,6 +152,49 @@
 </section>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+
+
+$(document).ready(function(){
+           $('#distname').change(function(){
+            $.ajax({
+                url:'/distsearch/',
+                type:'get',
+                data:{
+                    'id':$('#distname').val()
+                },
+                success:function(response){
+                    $('#local_area').html(response)
+                }
+            })
+           })
+        })
+
+
+        $(document).ready(function(){
+               $('#local_area').change(function(){
+                $.ajax({
+                    url:'/areasearch/',
+                    type:'get',
+                    data:{
+                        'id':$('#local_area').val(),
+                        'service':$('#services').val()
+                    },                   
+                    success:function(response){
+                        $('#centre').html(response)
+                    }
+                })
+               })
+            })
+
+</script>
+
+
+    
+    
+ 
 
 {% endblock %}
+

@@ -371,8 +371,46 @@ def wr_4_stage(request):
 
 
 def locate(request):
-    service = Service_locator.objects.all()
+    service = ServiceLocator.objects.all()
+    service_name_select = Service.objects.all()
+    districts = District.objects.all()
+    service_centre = ServiceLocator.objects.all()
+    if request.method == "POST":
+        service_name = request.POST['service']
+        district = request.POST['district']
+        service_location = request.POST['service_location']
+        # print(service_name,district,service_location)
+        service_obj = Service.objects.get(name=service_name)
+        dist = District.objects.get(id=district)
+        center = LocalArea.objects.get(id=service_location)
+        # print("#"*10,service_obj)
+        service_locator_obj = ServiceLocator.objects.filter(service=service_obj,district=dist,local_area=center)
+        print(service_locator_obj)
+        pass
     context = {
-        "service" : service
+        "service" : service,
+        "service_name_select" : service_name_select,
+        "districts":districts,
+        "centre":service_centre,
     }
     return render(request,'web/locate ur service.html',context)
+
+
+def distSearch(request):
+    dist_id = request.GET['id']
+    # print("*"*20,dist_id)
+    dist = District.objects.get(id=dist_id)
+    # print(dist)
+    local_area = LocalArea.objects.filter(district=dist)
+    # print(local_area)
+    return render(request,'web/localarea.html',{'local_area':local_area})
+
+def service_centre(request):
+    area_id = request.GET['id']
+    services = request.GET['service']
+    print("#"*30,area_id,services)
+    service_obj = Service.objects.get(id=services)
+    local_area = LocalArea.objects.get(id=area_id)
+    service_centre = ServiceLocator.objects.filter(local_area=local_area,service=service_obj)
+    # print(service_centre)
+    return render(request,'web/service_centre.html',{'service_centre':service_centre})

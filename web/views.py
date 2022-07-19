@@ -136,7 +136,7 @@ def enquiry(request):
         
         if forms.is_valid():
             print('validate')
-            print(forms.error)
+            
             data = forms.save(commit=False)
             data.referral = "web"
             data.save()

@@ -105,3 +105,9 @@ class Enquiry(models.Model):
     phone = models.CharField(max_length=200)
     product_name = models.CharField(max_length=200)
     quantity = models.IntegerField()
+
+    class Meta:
+        verbose_name_plural =("Enquiry Now")
+
+    def __str__(self):
+        return self.name + ', ' +self.product_name

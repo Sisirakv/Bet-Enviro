@@ -10,8 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 from .forms import *
 import json
 
-from bootstrap_modal_forms.generic import BSModalCreateView
-from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -412,6 +410,37 @@ def wr_8_stage(request):
 
 def wr_4_stage(request):
     return render(request,'web/rain water harvesting/wr-4stage.html')
+
+
+
+
+
+
+def water_conservation(request):
+    return render(request,'web/water conservation/water conservation.html')
+
+def well_recharge(request):
+    return render(request,'web/water conservation/well recharge.html')
+
+def rain_water(request):
+    return render(request,'web/water conservation/rain water.html')
+
+def flexi(request):
+    return render(request,'web/water conservation/flexi.html')
+
+
+
+def consultancy(request):
+    return render(request,'web/consultancy service/Consultancy.html')
+
+def green(request):
+    return render(request,'web/consultancy service/Green Auditing.html')
+
+def integrated(request):
+    return render(request,'web/consultancy service/Integrated Enviorment.html')
+
+def pcb(request):
+    return render(request,'web/consultancy service/Kerala PCB.html')
 
 
 

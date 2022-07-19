@@ -4,8 +4,6 @@ from django.forms.widgets import SelectMultiple, TextInput, Textarea, EmailInput
 
 from .models import *
 
-from bootstrap_modal_forms.forms import BSModalModelForm
-
 class contact_form(forms.ModelForm):
     class Meta:
         model = Contact

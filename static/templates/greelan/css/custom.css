@@ -171,7 +171,7 @@ background-size: cover;
 background-position: center;
 }
 .sp-page-title .sp-page-title-heading {
-font-size: 64px;
+font-size: 50px;
 color: var(--dark_color);
 line-height: 1;
 font-weight: 600;
@@ -974,6 +974,7 @@ transition: all 0.3s ease-out 0s;
 border: 3px solid #ffffff;
 }
 @media (max-width: 767px) {
+    
 .service-boxes .service-box-two {
 padding: 30px 15px 50px;
 }
@@ -983,7 +984,7 @@ font-size: 75px;
 color: var(--primary_color);
 }
 .service-boxes .service-box-two h3 {
-font-size: 24px;
+font-size: 16px!important;
 margin-top: 50px;
 font-weight: 600;
 }
@@ -995,7 +996,7 @@ color: var(--dark_color);
 }
 @media (max-width: 1199px) {
 .service-boxes .service-box-two h3 {
-font-size: 22px;
+font-size: 16px;
 }
 }
 .service-boxes .service-box-two .service-link {
@@ -2087,3 +2088,20 @@ opacity: 94% !important;
 }
 
 /*end extra*/
+
+
+@media (min-width: 375px) and (max-width: 769px) {
+
+        .sppb-addon-title {
+        font-size: 38px!important;
+    }
+   
+    .sppb-row .newrow{
+        display: -ms-flexbox;
+        display: inline-block;
+        -ms-flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}

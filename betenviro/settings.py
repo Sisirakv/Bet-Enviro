@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'web',
     'versatileimagefield',
     'crispy_forms',
+    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [

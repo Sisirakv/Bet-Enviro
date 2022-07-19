@@ -117,12 +117,11 @@ urlpatterns = [
 
     path('distsearch/', views.distSearch , name="distsearch"),
     path('areasearch/', views.service_centre , name="areasearch"),
+    path('enquiry',views.enquiry,name="enquiry"),
 
 
 
 
 
-
-    
 
 ]

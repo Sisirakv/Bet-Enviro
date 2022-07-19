@@ -7,8 +7,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
-from .forms import contact_form
+from .forms import *
 import json
+
+from bootstrap_modal_forms.generic import BSModalCreateView
+from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -123,7 +126,49 @@ def demo_services(request):
     return render(request,"web/demo service.html",context)
 
 
+@csrf_exempt
+def enquiry(request):
+
+    print('hi')
+    forms = enquiry_form(request.POST or None)
     
+    if request.method == "POST":
+        
+        if forms.is_valid():
+            print('validate')
+            
+            data = forms.save(commit=False)
+            data.referral = "web"
+            data.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Message successfully submitted"
+            }   
+            
+        else:
+            print('not validate')
+            response_data = {
+                "status": "false",
+                "title": "Form validation error",
+                "message": repr(forms.errors)
+            }
+        return HttpResponse(json.dumps(response_data), content_type='application/javascript')
+    else:
+        context= {
+        
+            "forms":forms,
+
+        }
+    return render(request,"web/product.html",context)
+
+
+
+
+    
+
+
+
 
 def water_QT_diag(request):
     return render(request,"web/water quality/wqt&diaganosis.html")

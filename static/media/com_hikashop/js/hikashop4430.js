@@ -1079,185 +1079,185 @@ var hikashop = {
 			window.scrollTo (target.offsetTop, currentScroll - (currentScroll/5));
 		}
 	},
-	refreshOneArea: function(refreshUrl, currentArea, el, refreshAreas, resp) {
-		var d = document, t = this, o = window.Oby;
-		o.xRequest(refreshUrl, {mode:'GET'}, function (xhr2) {
-			var div = d.createElement('div');
-			var scripts = '';
-			var text = xhr2.responseText.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, function(all, code){
-				if(all.indexOf('type="application/json"') != -1)
-					return '';
-				if(all.indexOf('type="application/ld+json"') != -1)
-					return '';
-				scripts += code + '\n';
-				return '';
-			});
+	// refreshOneArea: function(refreshUrl, currentArea, el, refreshAreas, resp) {
+	// 	var d = document, t = this, o = window.Oby;
+	// 	o.xRequest(refreshUrl, {mode:'GET'}, function (xhr2) {
+	// 		var div = d.createElement('div');
+	// 		var scripts = '';
+	// 		var text = xhr2.responseText.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, function(all, code){
+	// 			if(all.indexOf('type="application/json"') != -1)
+	// 				return '';
+	// 			if(all.indexOf('type="application/ld+json"') != -1)
+	// 				return '';
+	// 			scripts += code + '\n';
+	// 			return '';
+	// 		});
 
-			var body = /<body.*?>([\s\S]*)<\/body>/.exec(text);
-			if(!body)
-				body = text;
-			else
-				body = body[1];
-			o.updateElem(div, body);
-			var newElem = div.querySelector('.filter_refresh_div');
+	// 		var body = /<body.*?>([\s\S]*)<\/body>/.exec(text);
+	// 		if(!body)
+	// 			body = text;
+	// 		else
+	// 			body = body[1];
+	// 		o.updateElem(div, body);
+	// 		var newElem = div.querySelector('.filter_refresh_div');
 
-			// to avoid scroll in chrome
-			setTimeout(function(){
-				if(!currentArea) {
-					t.refreshCounter--;
-					return;
-				}
-				var className = currentArea.getAttribute('data-refresh-class');
-				if(className) o.removeClass(currentArea, className);
-				if(!newElem) {
-					t.refreshCounter--;
-					return;
-				}
-				var parentNode = currentArea.parentNode;
-				if(!parentNode) {
-					t.refreshCounter--;
-					return;
-				}
-				parentNode.replaceChild(newElem, currentArea);
-				if( scripts != '' ) {
-					var script = d.createElement('script');
-					script.setAttribute('type', 'text/javascript');
-					script.text = scripts;
-					d.head.appendChild(script);
-					d.head.removeChild(script);
-				}
+	// 		// to avoid scroll in chrome
+	// 		setTimeout(function(){
+	// 			if(!currentArea) {
+	// 				t.refreshCounter--;
+	// 				return;
+	// 			}
+	// 			var className = currentArea.getAttribute('data-refresh-class');
+	// 			if(className) o.removeClass(currentArea, className);
+	// 			if(!newElem) {
+	// 				t.refreshCounter--;
+	// 				return;
+	// 			}
+	// 			var parentNode = currentArea.parentNode;
+	// 			if(!parentNode) {
+	// 				t.refreshCounter--;
+	// 				return;
+	// 			}
+	// 			parentNode.replaceChild(newElem, currentArea);
+	// 			if( scripts != '' ) {
+	// 				var script = d.createElement('script');
+	// 				script.setAttribute('type', 'text/javascript');
+	// 				script.text = scripts;
+	// 				d.head.appendChild(script);
+	// 				d.head.removeChild(script);
+	// 			}
 
-				if(!window.localPage) window.localPage = {};
-				window.localPage.infiniteScrollPage = 1;
+	// 			if(!window.localPage) window.localPage = {};
+	// 			window.localPage.infiniteScrollPage = 1;
 
-				setTimeout(function(){
-					var elems = parentNode.querySelectorAll('.hikashop_subcontainer');
-					if(elems && elems.length)
-						window.hikashop.setConsistencyHeight(elems, 'min');
+	// 			setTimeout(function(){
+	// 				var elems = parentNode.querySelectorAll('.hikashop_subcontainer');
+	// 				if(elems && elems.length)
+	// 					window.hikashop.setConsistencyHeight(elems, 'min');
 
-					if(window.hikaVotes)
-						initVote(currentArea);
-					if(hkjQuery && hkjQuery.hktooltip)
-						hkjQuery('[data-toggle="hk-tooltip"]').hktooltip({"html": true,"container": "body"});
+	// 				if(window.hikaVotes)
+	// 					initVote(currentArea);
+	// 				if(hkjQuery && hkjQuery.hktooltip)
+	// 					hkjQuery('[data-toggle="hk-tooltip"]').hktooltip({"html": true,"container": "body"});
 
-					t.refreshCounter--;
-					if(t.refreshCounter == 0) {
-						o.fireAjax('filters.updated', {el: el, refreshAreas : refreshAreas, resp: resp});
-					}
-				}, 200);
-			}, 0);
-		});
-	},
-	addToCart: function(el, type, container, data) {
+	// 				t.refreshCounter--;
+	// 				if(t.refreshCounter == 0) {
+	// 					o.fireAjax('filters.updated', {el: el, refreshAreas : refreshAreas, resp: resp});
+	// 				}
+	// 			}, 200);
+	// 		}, 0);
+	// 	});
+	// },
+	// addToCart: function(el, type, container, data) {
 
-		var d = document, t = this, o = window.Oby,
-			product_id = 0,
-			url = el.getAttribute('href'),
-			cart_type = ((type !== 'wishlist') ? 'cart' : 'wishlist'),
-			containerName = el.getAttribute('data-addTo-div'),
-			extraContainer = el.getAttribute('data-addTo-extra'),
-			dest_id = el.getAttribute('data-addTo-cartid');
+	// 	var d = document, t = this, o = window.Oby,
+	// 		product_id = 0,
+	// 		url = el.getAttribute('href'),
+	// 		cart_type = ((type !== 'wishlist') ? 'cart' : 'wishlist'),
+	// 		containerName = el.getAttribute('data-addTo-div'),
+	// 		extraContainer = el.getAttribute('data-addTo-extra'),
+	// 		dest_id = el.getAttribute('data-addTo-cartid');
 
-		product_id = (cart_type == 'cart') ? el.getAttribute('data-addToCart') : el.getAttribute('data-addToWishlist');
-		dest_id = (dest_id ? parseInt(dest_id) : 0);
-		if(!url)
-			url = el.getAttribute('data-href');
+	// 	product_id = (cart_type == 'cart') ? el.getAttribute('data-addToCart') : el.getAttribute('data-addToWishlist');
+	// 	dest_id = (dest_id ? parseInt(dest_id) : 0);
+	// 	if(!url)
+	// 		url = el.getAttribute('data-href');
 
-		// Avoid bots and crawlers to add products in the cart
-		var r = /bot|googlebot|crawler|spider|robot|crawling/i;
-		if(navigator && navigator.userAgent && r.test(navigator.userAgent))
-			return false;
+	// 	// Avoid bots and crawlers to add products in the cart
+	// 	var r = /bot|googlebot|crawler|spider|robot|crawling/i;
+	// 	if(navigator && navigator.userAgent && r.test(navigator.userAgent))
+	// 		return false;
 
-		// No product ID - fallback mode
-		if(!product_id || !url) {
-			if(containerName && d.forms[containerName]) {
-				d.forms[containerName].submit();
-				return false;
-			}
-			return true;
-		}
+	// 	// No product ID - fallback mode
+	// 	if(!product_id || !url) {
+	// 		if(containerName && d.forms[containerName]) {
+	// 			d.forms[containerName].submit();
+	// 			return false;
+	// 		}
+	// 		return true;
+	// 	}
 
-		if(typeof container !== 'undefined') {
-			// container is provided, just use it
-		}else if(containerName && product_id) {
-			// search for the container on the page
-			container = d.forms['hikashop_product_form_' + product_id + '_' + containerName] || d.forms[containerName];
-		}
+	// 	if(typeof container !== 'undefined') {
+	// 		// container is provided, just use it
+	// 	}else if(containerName && product_id) {
+	// 		// search for the container on the page
+	// 		container = d.forms['hikashop_product_form_' + product_id + '_' + containerName] || d.forms[containerName];
+	// 	}
 
-		url += (url.indexOf('?') >= 0 ? '&' : '?') + 'tmpl=raw';
-		if(typeof data !== 'undefined') {
-		} else if(container) {
-			if(window.FormData)
-				data = new FormData(container);
-			else
-				data = o.getFormData(container);
-			if(extraContainer) {
-				extraContainer = d.forms[extraContainer] || d.getElementById(extraContainer);
-				if(window.FormData) {
-					extra = o.getFormData(extraContainer, false);
-					for(var k in extra) {
-						if(!extra.hasOwnProperty(k))
-							continue;
-						if(k == 'product_id')
-							extra[k] = product_id;
-						if(typeof(extra[k]) == 'object') {
-							for(var i in extra[k]) {
-								data.append(k, extra[k][i]);
-							}
-						} else
-							data.append(k, extra[k]);
-					}
-				} else {
-					var extra = o.getFormData(extraContainer);
-					if(extra)
-						data += '&' + extra;
-					data += '&product_id='+product_id;
-				}
-			}
-			if(window.FormData) {
-				data.append('cart_type', cart_type);
-				if(dest_id)
-					data.append('cart_id', dest_id);
-			} else {
-				data += '&cart_type=' + cart_type;
-				if(dest_id)
-					data += '&cart_id+' + dest_id;
-			}
-		} else {
-			data = 'cart_type=' + cart_type;
-			if(dest_id)
-				data += '&cart_id+' + dest_id;
-		}
+	// 	url += (url.indexOf('?') >= 0 ? '&' : '?') + 'tmpl=raw';
+	// 	if(typeof data !== 'undefined') {
+	// 	} else if(container) {
+	// 		if(window.FormData)
+	// 			data = new FormData(container);
+	// 		else
+	// 			data = o.getFormData(container);
+	// 		if(extraContainer) {
+	// 			extraContainer = d.forms[extraContainer] || d.getElementById(extraContainer);
+	// 			if(window.FormData) {
+	// 				extra = o.getFormData(extraContainer, false);
+	// 				for(var k in extra) {
+	// 					if(!extra.hasOwnProperty(k))
+	// 						continue;
+	// 					if(k == 'product_id')
+	// 						extra[k] = product_id;
+	// 					if(typeof(extra[k]) == 'object') {
+	// 						for(var i in extra[k]) {
+	// 							data.append(k, extra[k][i]);
+	// 						}
+	// 					} else
+	// 						data.append(k, extra[k]);
+	// 				}
+	// 			} else {
+	// 				var extra = o.getFormData(extraContainer);
+	// 				if(extra)
+	// 					data += '&' + extra;
+	// 				data += '&product_id='+product_id;
+	// 			}
+	// 		}
+	// 		if(window.FormData) {
+	// 			data.append('cart_type', cart_type);
+	// 			if(dest_id)
+	// 				data.append('cart_id', dest_id);
+	// 		} else {
+	// 			data += '&cart_type=' + cart_type;
+	// 			if(dest_id)
+	// 				data += '&cart_id+' + dest_id;
+	// 		}
+	// 	} else {
+	// 		data = 'cart_type=' + cart_type;
+	// 		if(dest_id)
+	// 			data += '&cart_id+' + dest_id;
+	// 	}
 
-		var className = el.getAttribute('data-addTo-class');
-		if(className) o.addClass(el, className);
+	// 	var className = el.getAttribute('data-addTo-class');
+	// 	if(className) o.addClass(el, className);
 
-		if(window.self !== window.top && window.top.hikashop) {
-			return window.top.hikashop.addToCart(el, type, container, data);
-		}
+	// 	if(window.self !== window.top && window.top.hikashop) {
+	// 		return window.top.hikashop.addToCart(el, type, container, data);
+	// 	}
 
-		o.xRequest(url, {mode:'POST', data: data}, function(xhr) {
-			var className = el.getAttribute('data-addTo-class');
-			if(className) o.removeClass(el, className);
+	// 	o.xRequest(url, {mode:'POST', data: data}, function(xhr) {
+	// 		var className = el.getAttribute('data-addTo-class');
+	// 		if(className) o.removeClass(el, className);
 
-			var resp = Oby.evalJSON(xhr.responseText);
-			var cart_id = (resp && (resp.ret || resp.ret === 0)) ? resp.ret : parseInt(xhr.responseText);
-			if(isNaN(cart_id)) {
-				console.log('cart_id was not returned in addToCart AJAX call');
-				console.log(resp);
-				return false;
-			}
+	// 		var resp = Oby.evalJSON(xhr.responseText);
+	// 		var cart_id = (resp && (resp.ret || resp.ret === 0)) ? resp.ret : parseInt(xhr.responseText);
+	// 		if(isNaN(cart_id)) {
+	// 			console.log('cart_id was not returned in addToCart AJAX call');
+	// 			console.log(resp);
+	// 			return false;
+	// 		}
 
-			var triggers = window.Oby.fireAjax(cart_type+'.updated', {id: cart_id, el: el, product_id: product_id, type: cart_type, resp: resp});
-			if(triggers !== false && triggers.length > 0)
-				return true;
-			if(window.localPage && cart_type == 'cart' && window.localPage.cartRedirect && typeof(window.localPage.cartRedirect) == 'function')
-				return window.localPage.cartRedirect(cart_id, product_id, resp);
-			if(window.localPage && cart_type == 'wishlist' && window.localPage.wishlistRedirect && typeof(window.localPage.wishlistRedirect) == 'function')
-				return window.localPage.wishlistRedirect(cart_id, product_id, resp);
-		});
-		return false;
-	},
+	// 		var triggers = window.Oby.fireAjax(cart_type+'.updated', {id: cart_id, el: el, product_id: product_id, type: cart_type, resp: resp});
+	// 		if(triggers !== false && triggers.length > 0)
+	// 			return true;
+	// 		if(window.localPage && cart_type == 'cart' && window.localPage.cartRedirect && typeof(window.localPage.cartRedirect) == 'function')
+	// 			return window.localPage.cartRedirect(cart_id, product_id, resp);
+	// 		if(window.localPage && cart_type == 'wishlist' && window.localPage.wishlistRedirect && typeof(window.localPage.wishlistRedirect) == 'function')
+	// 			return window.localPage.wishlistRedirect(cart_id, product_id, resp);
+	// 	});
+	// 	return false;
+	// },
 	addToWishlist: function(el) {
 		return this.addToCart(el, 'wishlist');
 	},

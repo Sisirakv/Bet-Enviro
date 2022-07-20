@@ -89,14 +89,34 @@ class subService(models.Model):
     class Meta:
         verbose_name_plural =("Sub service")
 
+class District(models.Model):
+    district_name = models.CharField(max_length=255)
 
-class Service_locator(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    district = models.CharField(max_length=200)
-    local_area = models.CharField(max_length=200)
-    center = models.CharField(max_length=200, null=True)
- 
+    class Meta:
+        verbose_name_plural = ("District")
+
     def __str__(self):
+        return self.district_name
+
+class LocalArea(models.Model):
+    district = models.ForeignKey(District, on_delete=models.CASCADE,null= True)
+    local_area_name = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name_plural = ("Local Area")
+
+    def __str__(self):
+        return self.local_area_name
+
+class ServiceLocator(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    local_area = models.ForeignKey(LocalArea, on_delete=models.CASCADE)
+    center = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.center
+ 
         return self.local_area
 
 

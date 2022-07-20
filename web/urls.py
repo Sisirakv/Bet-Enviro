@@ -115,6 +115,11 @@ urlpatterns = [
     path('WR 8 Stage/',views.wr_8_stage,name="WR 8 Stage"),
     path('WR 4 Stage/',views.wr_4_stage,name="WR 4 Stage"),
     path('Locate Service/',views.locate,name="Locate Service"),
+
+# district ajax
+
+    path('distsearch/', views.distSearch , name="distsearch"),
+    path('areasearch/', views.service_centre , name="areasearch"),
     path('enquiry',views.enquiry,name="enquiry"),
 
     path('Water Conservation/',views.water_conservation,name="Water Conservation"),

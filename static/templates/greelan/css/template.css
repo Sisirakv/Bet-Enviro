@@ -2605,7 +2605,7 @@ body.contentpane.com-contact.view-contacts.layout-modal .container-popup #adminF
 .sp-megamenu-parent {
     list-style: none;
     padding: 0;
-    margin: 0 -15px;
+    margin: 0 -40px;
     z-index: 99;
     display: block;
     float: right;

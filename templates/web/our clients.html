@@ -518,14 +518,16 @@
                             <div id="sppb-addon-1651219595906" class="clearfix ">
                                 <div class="sppb-addon sppb-addon-gallery ">
                                     <div class="sppb-addon-content">
-                                        <ul class="sppb-gallery clearfix gallery-item-left">
+                                        <div class="partner-logo-grid">
                                             {% for image in client %}
-                                            <li><a href=" {{image.image.crop.366x185}} "
-                                                    class="sppb-gallery-btn"><img class="sppb-img-responsive"
-                                                        src=" {{image.image.crop.366x185}} " alt=""
-                                                        loading="lazy"></a></li>
+                                            <div class="single-partner">
+                                                <a href="#!">
+                                                    <img src=" {{ image.image.crop.200x53 }} "
+                                                        alt="Partner">
+                                                </a>
+                                            </div>
                                             {% endfor %}
-                                        </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

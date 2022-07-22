@@ -165,13 +165,24 @@ border-bottom: 0px solid #fff;
 
 /*title*/
 .sp-page-title {
-padding-top: 142px;
-padding-bottom: 142px;
+padding-top: 70px;
+padding-bottom: 70px;
 background-size: cover;
 background-position: center;
 }
+
+@media (min-width:768px) and (max-width:991px) {
+    .sp-page-title {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-size: cover;
+        background-position: center;
+        }
+}
+
+
 .sp-page-title .sp-page-title-heading {
-font-size: 50px;
+font-size: 30px;
 color: var(--dark_color);
 line-height: 1;
 font-weight: 600;
@@ -196,7 +207,7 @@ p,
 body,
 .sp-preloader {
 /* color: var(--body_color) !important; */
-font-size: 18px !important;
+font-size: 15px !important;
 font-weight: 400;
 line-height: 29px !important;
 }
@@ -967,6 +978,7 @@ box-shadow: 0px 10px 30px 0px rgba(255, 74, 23, 0.3);
 }
 .service-boxes .service-box-two {
 border-radius: 10px;
+height: 320px;
 padding: 80px 15px 60px 15px;
 background-color: #fff;
 position: relative;
@@ -977,6 +989,7 @@ border: 3px solid #ffffff;
     
 .service-boxes .service-box-two {
 padding: 30px 15px 50px;
+height: 260px;
 }
 }
 .service-boxes .service-box-two .icon {

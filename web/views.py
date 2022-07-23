@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from web.models import Category, Gallery, Product
 
@@ -55,13 +56,32 @@ def product(request):
 
 
 
-def blog(request):
-    blog = Blog.objects.all() 
+
+def blog_list(request):
+    blog_list = Blog.objects.all() 
+    context = {
+        "blog_list" : blog_list,
+    }
+    return render(request,'web/blog list.html',context)
+
+
+
+
+def blog(request, id):
+    blog = Blog.objects.get(id = id) 
+    
+    print(blog)
     context = {
         "is_blog" : True,
-        "blogs" : blog,
+        "blog" : blog,
+        
+
     }
     return render(request,"web/blog.html",context)
+
+
+
+
 
 @csrf_exempt
 def contact(request):
@@ -488,3 +508,11 @@ def service_centre(request):
     service_centre = ServiceLocator.objects.filter(local_area=local_area,service=service_obj)
     # print(service_centre)
     return render(request,'web/service_centre.html',{'service_centre':service_centre})
+
+
+
+
+
+
+def demo2(request):
+    return render(request, 'web/water-quality-test.html')

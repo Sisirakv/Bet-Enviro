@@ -1822,8 +1822,8 @@ table.category tbody>tr td {
 .sp-scroll-up {
     display: none;
     position: fixed;
-    bottom: 60px;
-    right: 30px;
+    bottom: 18px;
+    right: 15px;
     width: 36px;
     height: 36px;
     line-height: 36px;

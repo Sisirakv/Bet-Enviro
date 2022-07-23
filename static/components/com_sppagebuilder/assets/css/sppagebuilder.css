@@ -9887,7 +9887,6 @@ div[data-arrow-content=icon_with_text] .sp-nav-control .nav-control {
 .sppb-addon-form-builder-form {
     display: flex;
     flex-wrap: wrap;
-    padding: 30px;
 }
 
 .sppb-addon-form-builder-form .sppb-form-group {

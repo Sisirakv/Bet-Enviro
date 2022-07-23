@@ -397,60 +397,7 @@
                                             </div>
                                         </li>
 
-                                        <!-- <li {% if is_services %} class="sp-menu-item active sp-has-child" {% endif %}><a
-                                                href="{% url 'web:services' %}">Services</a>
-                                            <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Water QT & diag' %}">Water Quality
-                                                                Testing &
-                                                                Diaganosis</a>
-                                                                
-
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Water Treatment' %}">Water
-                                                                Treatment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Water Conservation' %}">Water Conservation
-                                                                & recharging</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Commercials and industrial WT' %}">Commercials
-                                                                &
-                                                                Industrial Water Treatment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Waste Water Treatment' %}">Waste Water
-                                                                Treatment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Food WM' %}">food
-                                                                waste
-                                                                managment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Solid WM' %}">solid waste
-                                                                managment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Solar Energy' %}">solar energy
-                                                                systems</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:After Sale' %}">after sales
-                                                                services</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Consultancy' %}">consulting
-                                                                services</a>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li> -->
-
+                                        
 
 
                                         <li {% if is_product %} class="sp-menu-item active" {% endif %}><a
@@ -903,54 +850,52 @@
 
                             </li>
 
-                            <li {% if is_services %} class="sp-menu-item active sp-has-child" {% endif %}><a
-                                    href="{% url 'web:services' %}">Services</a>
-                                <div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 240px;">
-                                    <div class="sp-dropdown-inner">
-                                        <ul class="sp-dropdown-items">
-                                            <li class="sp-menu-item"><a href="{% url 'web:Water QT & diag' %}">Water
-                                                    Quality
-                                                    Testing &
-                                                    Diaganosis</a>
+                            <li class="item-111 menu-deeper menu-parent"><a href="#!">Services<span
+                                class="menu-toggler"></span></a>
+                        <ul class="menu-child">
+                            <li class="sp-menu-item"><a
+                                href="{% url 'web:Water QT & diag' %}">Water Quality
+                                Testing &
+                                Diaganosis</a>
 
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Water Treatment' %}">Water
-                                                    Treatment</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Water Conservation' %}">Water
-                                                    Conservation
-                                                    & recharging</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a
-                                                    href="{% url 'web:Commercials and industrial WT' %}">Commercials
-                                                    &
-                                                    Industrial Water Treatment</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a
-                                                    href="{% url 'web:Waste Water Treatment' %}">Waste Water
-                                                    Treatment</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Food WM' %}">food
-                                                    waste
-                                                    managment</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Solid WM' %}">solid waste
-                                                    managment</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Solar Energy' %}">solar energy
-                                                    systems</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:After Sale' %}">after sales
-                                                    services</a>
-                                            </li>
-                                            <li class="sp-menu-item"><a href="{% url 'web:Consultancy' %}">consulting
-                                                    services</a>
-                                            </li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Water Treatment' %}">Water
+                                Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Water Conservation' %}">Water
+                                Conservation
+                                & Recharging</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Commercials and industrial WT' %}">Commercials
+                                &
+                                Industrial Water Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Waste Water Treatment' %}">Waste Water
+                                Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a href="{% url 'web:Food WM' %}">Food
+                                Waste
+                                Managment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Solar Energy' %}">Solar Energy
+                                Systems</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:After Sale' %}">After Sales
+                                Services</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Consultancy' %}">Consulting
+                                Services</a>
+                        </li>
+                        </ul>
+                    </li>
                             <li {% if is_product %} class="item-112 active menu-deeper" {% endif %}><a
                                     href="{% url 'web:product' %}">Products<span class="menu-toggler"></span></a>
                             </li>

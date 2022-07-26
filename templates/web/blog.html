@@ -27,7 +27,7 @@
             <div class="sp-column ">
                 <div class="sp-page-title" style="background-color: #f4f5f9;">
                     <div class="container">
-                        <h2 class="sp-page-title-heading">Blog List</h2>
+                        <h2 class="sp-page-title-heading">Blog</h2>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
 
 
                             <div class="article-list articles-leading">
-                                {% for blog in blogs %}
+                               
 
 
                                 <div class="article" itemprop="blogPost" itemscope
@@ -71,7 +71,7 @@
 
 
                                     <div class="article-intro-image float-left">
-                                        <a href="blog-details.html">
+                                        <a href="#!">
                                             <img src="{{blog.image.crop.860x567}}" itemprop="thumbnailUrl" width="1200"
                                                 height="801" loading="lazy"> </a>
                                     </div>
@@ -81,7 +81,7 @@
 
                                         <div class="article-header">
                                             <h2>
-                                                <a href="blog-details.html">
+                                                <a href="#!">
                                                     {{blog.heading}} </a>
                                             </h2>
 
@@ -97,7 +97,7 @@
 
 
                                             <span class="category-name" title="Category: Gardening">
-                                                <a href="blog-list.html">{{blog.category}}</a>
+                                                <a href="#!">{{blog.category}}</a>
                                             </span>
 
 
@@ -127,7 +127,7 @@
                                 </div>
 
 
-                                {% endfor %}
+                                
 
 
 

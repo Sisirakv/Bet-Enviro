@@ -107,7 +107,8 @@
                                                                         <div class="sppb-addon sppb-addon-raw-html ">
                                                                             <div class="sppb-addon-content">
                                                                                 <ul class="topbar-menu sppb-text-right">
-                                                                                    <li class="modal"><a href="contact/">Get a
+                                                                                    <li class="modal"><a
+                                                                                            href="contact/">Get a
                                                                                             Quote</a>
 
                                                                                     </li>
@@ -334,117 +335,203 @@
                                             <span></span><span></span><span></span>
                                         </div>
                                     </a>
+                                    <style>
+                                        .dropdown-submenu {
+                                        position: relative;
+                                        }
+
+                                        .dropdown-submenu .dropdown-menu {
+                                        top: 0;
+                                        left: 100%;
+                                        margin-top: -1px;
+                                        }
+                                        .dropdown-submenu:hover > .dropdown-menu{
+                                            display: block;
+
+                                        }
+                                    </style>
                                     <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-block">
+
+
+
                                         <li {% if is_index %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:index' %}">Home</a>
                                         </li>
-                                        <li class="sp-menu-item sp-has-child"><a href="#!">Services</a>
-                                            <div class="sp-dropdown sp-dropdown-main sp-menu-right"
-                                                style="width: 240px;">
-                                                <div class="sp-dropdown-inner">
-                                                    <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
-                                                                href="../services/service-one.html">Service One</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="../services/service-two.html">Service Two</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="../services/services-details.html">Services
-                                                                details</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
+                                     
 
                                         <li {% if is_about_us %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:About us' %}">About</a>
                                         </li>
-                                        <li {% if is_services %} class="sp-menu-item active sp-has-child service" {% endif %}><a
+
+                                        <li class="sp-menu-item sp-has-child"><a
                                                 href="{% url 'web:services' %}">Services</a>
                                             <div class="sp-dropdown sp-dropdown-main sp-menu-right"
                                                 style="width: 240px;">
                                                 <div class="sp-dropdown-inner">
                                                     <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Water QT & diag' %}">Water Quality
+                                                        
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Water QT & diag' %}">Water Quality
                                                                 Testing &
-                                                                Diaganosis</a> 
-                                                                <style>
-                                                                    .dropdown-submenu {
-                                                                    position: relative;
-                                                                    }
+                                                                Diaganosis <span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Water QT' %}">Water Quality Analysis</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Waste Water QT' %}">Waste Water Quality Testing</a></li>
+                                                        
+                                                            </ul>
 
-                                                                    .dropdown-submenu .dropdown-menu {
-                                                                    top: 0;
-                                                                    left: 100%;
-                                                                    margin-top: -1px;
-                                                                    }
-                                                                    .dropdown-submenu:hover > .dropdown-menu{
-                                                                        display: block;
+                                                        </li>
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                    <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Water Treatment' %}">Water Treatment<span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                     
+                                                      <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                        <a class="test" href="{% url 'web:Water Filter' %}">Water Filter<span class="caret"></span></a>
+                                                        <ul class="dropdown-menu">
+                                                          <li class="sp-menu-item"><a href="{% url 'web:Sand Filter' %}">Sand Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="{% url 'web:Carbon Filter' %}">Carbon Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="{% url 'web:Iron Filter' %}">Iron Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="{% url 'web:Softner Hardner' %}">Softener/Hardner</a></li>
+                                                          <li class="sp-menu-item"><a href="{% url 'web:DMF' %}">DMF</a></li>
+                                                          <li class="sp-menu-item"><a href="{% url 'web:TMF' %}">TMF</a></li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
 
-                                                                    }
-                                                                </style>
+                                                        </li>
+                                                        
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Water Conservation' %}">Water Conservation And Recharging<span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Well Recharge' %}">Well Recharge Systems</li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Rain Water' %}">Rain Water Harvesting</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Flexi' %}">Flexi Chech Dam</a></li>
+                                                            </ul>
+
+                                                        </li>
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Commercials and industrial WT' %}">Commercial & Industrial Water Treatment<span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Rverse OS' %}">Reverse Osmosis (ro) Water Treatment Plant</li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Ultra Filtertion' %}">Ultra Filteration (uf water treatment) plant</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Ozonation' %}">Ozonation</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Packaged Drinking' %}">Packaged Drinking/Miniral Water plant</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Carbonated Soft Drink' %}">Carbanated Soft Drink Plant</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Pet Bottle BM' %}">Pet Bottle Blowing Machine</a></li>
+                                                            </ul>
+
+                                                        </li>
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Waste Water Treatment' %}">Waste Water Treatment<span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                             
+                                                              <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                                <a class="test" href="{% url 'web:STP' %}">Sewage Water Treatment/STP & ETP<span class="caret"></span></a>
+                                                                <ul class="dropdown-menu">
+                                                                  <li class="sp-menu-item"><a href="{% url 'web:MBBR' %}">MBBR</a></li>
+                                                                  <li class="sp-menu-item"><a href="{% url 'web:SBR' %}">SBR</a></li>
+                                                                  <li class="sp-menu-item"><a href="{% url 'web:SAFF' %}">SAFF</a></li>
+                                                                  <li class="sp-menu-item"><a href="{% url 'web:BIO DIGESTER' %}">Bio Digester</a></li>
+                                                                  
+                                                                </ul>
+                                                              </li>
+                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:ETP' %}">Effluent Water Treatment/ETP<span class="caret"></span></a></li>
+                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:Oil Trap' %}">Oil Trap Semi-automatic<span class="caret"></span></a></li>
+                                                              
+                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:Grid Remover System' %}">Grit Remover System<span class="caret"></span></a></li>
+                                                            </ul>
+        
+                                                                </li>
                                                                 <li class="dropdown-submenu sp-menu-item sp-has-child">
-                                                                    <a class="test sp-has-child" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                                                                    <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Food WM' %}">Food Waste Management<span class="caret"></span></a>
                                                                     <ul class="dropdown-menu">
-                                                                      <li class="sp-menu-item"><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                                                      <li class="sp-menu-item"><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                                                     
                                                                       <li class="dropdown-submenu sp-menu-item sp-has-child">
-                                                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                                                                        <a class="test" href="{% url 'web:Biogas' %}">Biogas<span class="caret"></span></a>
                                                                         <ul class="dropdown-menu">
-                                                                          <li class="sp-menu-item"><a href="#">3rd level dropdown</a></li>
-                                                                          <li class="sp-menu-item"><a href="#">3rd level dropdown</a></li>
+                                                                          <li class="sp-menu-item"><a href="{% url 'web:Portable Biogas' %}">Portable Biogas Plant</a></li>
+                                                                          <li class="sp-menu-item"><a href="{% url 'web:Underground Biogas' %}">Underground Concrete Biogas Plant</a></li>
+                                                                          <li class="sp-menu-item"><a href="{% url 'web:Market Waste' %}">Maket waste/ live stoke waste management</a></li>
+                                                                          
+                                                                          
                                                                         </ul>
                                                                       </li>
+                                                                      <li class="sp-menu-item"><a class="test" href="{% url 'web:Biocompost' %}">Biocompost - Bio waste digester<span class="caret"></span></a></li>
+                                                                      <li class="sp-menu-item"><a class="test" href="{% url 'web:Market Waste' %}">Maket waste/ live stoke waste management<span class="caret"></span></a></li>
+                                                                      
+                                                                      
                                                                     </ul>
+                
+                                                                        </li>
 
+                                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Solid WM' %}">Solid Waste Management<span class="caret"></span></a>
+                                                                            <ul class="dropdown-menu">
+                                                                             
+                                                                              <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                                                <a class="test" href="{% url 'web:INCINERATOR' %}">Incinerator<span class="caret"></span></a>
+                                                                                <ul class="dropdown-menu">
+                                                                                  <li class="sp-menu-item"><a href="{% url 'web:Brick made' %}">Brick Made Fuel Incinerator</a></li>
+                                                                                  <li class="sp-menu-item"><a href="{% url 'web:SS' %}">No Fuel SS body Incinerator</a></li>
+                                                                                  <li class="sp-menu-item"><a href="{% url 'web:MS' %}">No Fuel MS Body Incinerator</a></li>
+                                                                                  
+                                                                                  
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:Napkin Incinerator' %}">Napkin Incinerator<span class="caret"></span></a></li>
+                                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:Plastic Recycling' %}">Plastic Recycling<span class="caret"></span></a></li>
+                                                                              <li class="sp-menu-item"><a class="test" href="{% url 'web:Napkin Vending' %}">Napkin Vending Machines<span class="caret"></span></a></li>
+                                                                              
+                                                                              
+                                                                            </ul>
+                        
+                                                                                </li>
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child"><a
+                                                                href="{% url 'web:Solar Energy' %}" class="test sp-has-child" tabindex="-1">Solar Energy
+                                                                Systems</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:On Grid' %}">Solar Power Plant-On grid</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Off Grid' %}">Solar Power Plant-off grid</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Water Heater' %}">Solar Water Heater</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Street light' %}">Solar Street Light</a></li>
+                                                              
+                                                                  </ul>
+                                                        </li>
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child"><a
+                                                                href="{% url 'web:After Sale' %}" class="test sp-has-child" tabindex="-1">After Sales
+                                                                Services</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:AMC' %}">AMC Services</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:WT Chemical' %}">Treatment Chemicals</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:WT Accessories' %}">Treatment Accessories</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Resetting' %}">PCT - Resetting Services</a></li>
+                                                              
+                                                                  </ul>
                                                         </li>
                                                         <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Water Treatment' %}">Water
-                                                                Treatment</a>
+                                                                href="{% url 'web:Consultancy' %}">Consulting
+                                                                Services</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Intergrated' %}">Integrated Environment Management</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:PCB' %}">Kerala PCB Services</a></li>
+                                                                    <li class="sp-menu-item"><a tabindex="-1" href="{% url 'web:Green Aud' %}">Green Auditing for Institutions</a></li>
+                                                                    
+                                                              
+                                                                  </ul>
                                                         </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Water Conservation' %}">Water Conservation
-                                                                & recharging</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Commercials and industrial WT' %}">Commercials
-                                                                &
-                                                                Industrial Water Treatment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Waste Water Treatment' %}">Waste Water
-                                                                Treatment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Food WM' %}">food
-                                                                waste
-                                                                managment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Solid WM' %}">solid waste
-                                                                managment</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Solar Energy' %}">solar energy
-                                                                systems</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:After Sale' %}">after sales
-                                                                services</a>
-                                                        </li>
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Consultancy' %}">consulting
-                                                                services</a>
-                                                        </li>
-
                                                     </ul>
                                                 </div>
                                             </div>
                                         </li>
+
+                                        
+
+
                                         <li {% if is_product %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:product' %}">Products</a>
                                         </li>
                                         <li {% if is_blog %} class="sp-menu-item active" {% endif %}><a
-                                                href="{% url 'web:blog' %}">Blog</a>
+                                                href="{% url 'web:Blog list' %}">Blog</a>
                                         </li>
                                         <li {% if is_gallery %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:gallery' %}">Gallery</a>
@@ -839,20 +926,58 @@
                                     href="{% url 'web:About us' %}">About<span class="menu-toggler"></span></a>
 
                             </li>
-                            <li {% if is_services %} class="item-111 active menu-deeper menu-parent" {% endif %}><a
-                                    href="{% url 'web:services' %}">Services<span class="menu-toggler"></span></a>
-                                <ul class="menu-child">
-                                    <li class="item-117"><a href="services/service-one.html">Service One</a></li>
-                                    <li class="item-118"><a href="services/service-two.html">Service Two</a></li>
-                                    <li class="item-119"><a href="services/services-details.html">Services details</a>
-                                    </li>
-                                </ul>
-                            </li>
+
+                            <li class="item-111 menu-deeper menu-parent"><a href="#!">Services<span
+                                class="menu-toggler"></span></a>
+                        <ul class="menu-child">
+                            <li class="sp-menu-item"><a
+                                href="{% url 'web:Water QT & diag' %}">Water Quality
+                                Testing &
+                                Diaganosis</a>
+
+
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Water Treatment' %}">Water
+                                Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Water Conservation' %}">Water
+                                Conservation
+                                & Recharging</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Commercials and industrial WT' %}">Commercials
+                                &
+                                Industrial Water Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Waste Water Treatment' %}">Waste Water
+                                Treatment</a>
+                        </li>
+                        <li class="sp-menu-item"><a href="{% url 'web:Food WM' %}">Food
+                                Waste
+                                Managment</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Solar Energy' %}">Solar Energy
+                                Systems</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:After Sale' %}">After Sales
+                                Services</a>
+                        </li>
+                        <li class="sp-menu-item"><a
+                                href="{% url 'web:Consultancy' %}">Consulting
+                                Services</a>
+                        </li>
+                        </ul>
+                    </li>
                             <li {% if is_product %} class="item-112 active menu-deeper" {% endif %}><a
                                     href="{% url 'web:product' %}">Products<span class="menu-toggler"></span></a>
                             </li>
                             <li {% if is_blog %} class="item-113 active menu-deeper" {% endif %}><a
-                                    href="{% url 'web:blog' %}">Blog<span class="menu-toggler"></span></a>
+                                    href="{% url 'web:Blog list' %}">Blog<span class="menu-toggler"></span></a>
 
                             </li>
                             <li {% if is_gallery %} class="item-114 active menu-deeper" {% endif %}><a

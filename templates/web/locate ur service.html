@@ -51,9 +51,9 @@
 
 </section>
 
-<section id="sp-main-body">
+<section id="sp-main-body" style="background-image:url({% static 'images/location_search2.jpg' %});">
     <div class="row">
-    <div id="sppb-addon-wrapper-1628690870561" class="col-lg-4 sppb-addon-wrapper">
+    <!-- <div id="sppb-addon-wrapper-1628690870561" class="col-lg-4 sppb-addon-wrapper">
         <div id="sppb-addon-1628690870561" class="clearfix ">
             <div class="sppb-addon-openstreetmap-wrapper">
                 <div class="sppb-addon-content">
@@ -65,25 +65,19 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="section-id-1628690870562" class="col-lg-8 sppb-section">
+    </div> -->
+    <div class="col-sm-2"></div>
+    <div id="section-id-1628690870562" class="col-sm-8 sppb-section">
         <div class="sppb-container-inner">
             <div class="row">
                 <div class="sppb-col-md-1">
 
                 </div>
-                <div class="sppb-col-md-6 sppp-column-vertical-align" id="column-wrap-id-1628690870564">
+                
                     <div id="column-id-1628690870564" class="sppb-column zindex-top opacity94 sppb-align-items-top">
                         <div class="sppb-column-overlay"></div>
                         <div class="sppb-column-addons" style="padding-top:15px;">
-                            <div id="sppb-addon-wrapper-1628690870565" class="sppb-addon-wrapper">
-                                <div id="sppb-addon-1628690870565" class="clearfix ">
-                                    <div class="sppb-addon sppb-addon-header sppb-text-left">
-                                        <h2 class="sppb-addon-title pb-4">
-                                            Select Your Place
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div id="sppb-addon-wrapper-1651225851606" class="sppb-addon-wrapper">
                                 <div id="sppb-addon-1651225851606" class="clearfix ">
                                     <div class="sppb-addon sppb-addon-form-builder">
@@ -101,7 +95,7 @@
                                                 <div class="sppb-form-group sppb-form-builder-field-1">
                                                     <select class="form-select" aria-label="Default select example" name="district" id="distname">
                                                         <option selected>Select District</option>
-                                                        {% for d in districts %}
+                                                        {% for d in dist %}
                                                         <option value="{{d.id}}">{{d.district_name}}</option>
                                                         {% endfor %}
                                                     </select>
@@ -141,13 +135,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="sppb-col-md-3">
-
-                </div>
+                
+               
             </div>
         </div>
     </div>
+    <div class="col-sm-2"></div>
 </div>
 </section>
 

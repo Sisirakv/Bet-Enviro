@@ -142,10 +142,26 @@
         .hikashop_product_image_subdiv img {
             padding-left: 0px;
             margin: 0px;
+           
         }
 
         .hikabtn.hikacart {
             font-size: 10px;
+        }
+
+        #sp-right .sp-module {
+            padding: 0px;
+        }
+
+        .mx-3 {
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+        }
+        #hikashop_category_information_menu_147 .hikashop_product_image_subdiv{
+            width: 165px;
+        }
+        .sppb-addon-title{
+            font-size: 13px!important;
         }
     }
 </style>
@@ -179,33 +195,38 @@
 <section id="sp-main-body">
 
     <div class="container">
-        <div class="container-inner">
 
 
-            <div class="row">
-                <aside id="sp-right" class="col-lg-4 ">
-                    <div class="sp-column ">
-                        <div class="sp-module m-5 " style="border: none;">
 
-                            <div class="sp-module-content">
 
-                                <ul class="food-menu-filter  mod-articlescategories categories-module mod-list d-flex ">
-                                    <li class="active" data-filter="*" style="padding: 30px;line-height: 20px;">All</li>
-                                    &nbsp;
-                                    {% for category in category %}
-                                    <li data-filter=".{{category.category_name|slugify}}"
-                                        style="padding: 20px;line-height: 20px;">{{category.category_name}}</li>&nbsp;
-                                    {% endfor %}
+        <div id="sp-right">
+            <div class="sp-colum">
+                <div class="sp-module " style="border: none;">
 
-                                </ul>
+                    <div class="">
 
-                            </div>
 
-                        </div>
+                        <ul class="food-menu-filter d-flex ">
+                            <button class="btn btn-outline-primary rounded">
+                                <li class="active" data-filter="*">All</li>
+                            </button>
+
+                            {% for category in category %}
+                            <button class="btn btn-outline-primary rounded py-0 mx-3">
+                                <li data-filter=".{{category.category_name|slugify}}" style="line-height: 20px;">
+                                    {{category.category_name}}</li>
+                            </button>
+                            {% endfor %}
+
+                        </ul>
+
                     </div>
-                </aside>
+
+                </div>
             </div>
         </div>
+    </div>
+
     </div>
 
 
@@ -255,28 +276,28 @@
                                                         <!-- IMAGE -->
                                                         <div class="hikashop_product_image">
                                                             <div class="hikashop_product_image_subdiv">
-                                                                <a href="main-shop/product/1-gardening-artificial-flowers.html"
-                                                                    class="">
-                                                                    <img class="hikashop_product_listing_image"
+                                                                <a href="#" class="">
+                                                                    <img class="hikashop_product_listing_image text-center"
                                                                         title="Gardening Artificial Flowers"
                                                                         alt="product2"
-                                                                        src="{{product.product_image.url}}" />
+                                                                        src="{{product.product_image.crop.185x185}}" />
                                                                 </a>
                                                                 <meta itemprop="image"
-                                                                    content="{{product.product_image.url}}" />
+                                                                    content="{{product.product_image.crop.185x185}}" />
                                                             </div>
                                                         </div>
                                                         <!-- EO IMAGE -->
                                                         <span class="hikashop_product_name">
-                                                            
+
                                                             {{product.product_name}}
                                                         </span>
 
-                                        
-                                                        <br><br><button type="button" id="enqrybtn"  class="hikabtn hikacart" ><span>Enquire Now</span></button>
-                             
 
-                                                        
+                                                        <br><br><button type="button" id="enqrybtn"
+                                                            class="hikabtn hikacart"><span>Enquire Now</span></button>
+
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,11 +308,11 @@
 
 
                                 </div>
-                                
+
                             </div>
                         </div>
-                        
-                     
+
+
                 </main>
             </div>
         </div>
@@ -308,8 +329,7 @@
 
 
 
-<div class="modal fade" id="exampleModal" aria-hidden="true" 
-    tabindex="-1">
+<div class="modal fade" id="exampleModal" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -317,27 +337,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form method="POST" action="{% url 'web:enquiry' %}" class="sppb-addon-form-builder-form ajax" enctype="multipart/form-data">{% csrf_token %}
-            <div class="modal-body">
-              
-                <label for="recipient-name" class="col-form-label" required>Name: </label>
-                <input type="text" name="name" class="form-control" id="recipient-name" required>{{forms.name}}
+            <form method="POST" action="{% url 'web:enquiry' %}" class="sppb-addon-form-builder-form ajax"
+                enctype="multipart/form-data">{% csrf_token %}
+                <div class="modal-body">
 
-                <label for="phn-name" class="col-form-label">Phone Number: </label>
-                <input type="text" name="phone" class="form-control" id="phn-name" required>{{forms.phone}}
+                    <label for="recipient-name" class="col-form-label" required>Name: </label>
+                    <input type="text" name="name" class="form-control" id="recipient-name" required>{{forms.name}}
 
-                <label for="prdct-name" class="col-form-label">Product name: </label>
-                <input type="text" name="product_name" class="form-control" id="prdct-name" required>{{forms.product_name}}
+                    <label for="phn-name" class="col-form-label">Phone Number: </label>
+                    <input type="text" name="phone" class="form-control" id="phn-name" required>{{forms.phone}}
 
-                <label for="qty-name" class="col-form-label">Quantity: </label>
-                <input type="number" name="quantity" class="form-control" id="qty-name" required>{{forms.quantity}}
-           
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggleLabel" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">Submit</button>
-            </div>
-        </form>
+                    <label for="prdct-name" class="col-form-label">Product name: </label>
+                    <input type="text" name="product_name" class="form-control" id="prdct-name"
+                        required>{{forms.product_name}}
+
+                    <label for="qty-name" class="col-form-label">Quantity: </label>
+                    <input type="number" name="quantity" class="form-control" id="qty-name" required>{{forms.quantity}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggleLabel"
+                        data-bs-toggle="modal" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -351,7 +373,7 @@
     $(document).ready(function () {
 
         $("#enqrybtn").click(function () {
-        
+
             $('#exampleModal').modal('show');
 
         });

@@ -9,7 +9,8 @@ urlpatterns = [
     path("product/",views.product,name='product'),
     path("contact/",views.contact,name='contact'),
     path("gallery/",views.gallery,name='gallery'),
-    path("blog/",views.blog,name='blog'), 
+    path("blog/<int:id>",views.blog,name='blog'), 
+    path("Blog list/",views.blog_list,name='Blog list'), 
     path("services/",views.services,name='services'), 
     path("About us/",views.about_us,name="About us"),
     path("clients/",views.client,name="clients"),
@@ -137,5 +138,5 @@ urlpatterns = [
 
 
 
-
+    path('demo2/', views.demo2,name="demo2")
 ]

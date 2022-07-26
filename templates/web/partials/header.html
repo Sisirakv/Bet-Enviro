@@ -404,7 +404,7 @@
                                                 href="{% url 'web:product' %}">Products</a>
                                         </li>
                                         <li {% if is_blog %} class="sp-menu-item active" {% endif %}><a
-                                                href="{% url 'web:blog' %}">Blog</a>
+                                                href="{% url 'web:Blog list' %}">Blog</a>
                                         </li>
                                         <li {% if is_gallery %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:gallery' %}">Gallery</a>
@@ -900,7 +900,7 @@
                                     href="{% url 'web:product' %}">Products<span class="menu-toggler"></span></a>
                             </li>
                             <li {% if is_blog %} class="item-113 active menu-deeper" {% endif %}><a
-                                    href="{% url 'web:blog' %}">Blog<span class="menu-toggler"></span></a>
+                                    href="{% url 'web:Blog list' %}">Blog<span class="menu-toggler"></span></a>
 
                             </li>
                             <li {% if is_gallery %} class="item-114 active menu-deeper" {% endif %}><a

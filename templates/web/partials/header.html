@@ -1,4 +1,5 @@
 {% load static %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="body-wrapper">
     <div class="body-innerwrapper">
@@ -337,10 +338,29 @@
                                         <li {% if is_index %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:index' %}">Home</a>
                                         </li>
+                                        <li class="sp-menu-item sp-has-child"><a href="#!">Services</a>
+                                            <div class="sp-dropdown sp-dropdown-main sp-menu-right"
+                                                style="width: 240px;">
+                                                <div class="sp-dropdown-inner">
+                                                    <ul class="sp-dropdown-items">
+                                                        <li class="sp-menu-item"><a
+                                                                href="../services/service-one.html">Service One</a>
+                                                        </li>
+                                                        <li class="sp-menu-item"><a
+                                                                href="../services/service-two.html">Service Two</a>
+                                                        </li>
+                                                        <li class="sp-menu-item"><a
+                                                                href="../services/services-details.html">Services
+                                                                details</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
                                         <li {% if is_about_us %} class="sp-menu-item active" {% endif %}><a
                                                 href="{% url 'web:About us' %}">About</a>
                                         </li>
-                                        <li {% if is_services %} class="sp-menu-item active sp-has-child" {% endif %}><a
+                                        <li {% if is_services %} class="sp-menu-item active sp-has-child service" {% endif %}><a
                                                 href="{% url 'web:services' %}">Services</a>
                                             <div class="sp-dropdown sp-dropdown-main sp-menu-right"
                                                 style="width: 240px;">
@@ -349,7 +369,35 @@
                                                         <li class="sp-menu-item"><a
                                                                 href="{% url 'web:Water QT & diag' %}">Water Quality
                                                                 Testing &
-                                                                Diaganosis</a>
+                                                                Diaganosis</a> 
+                                                                <style>
+                                                                    .dropdown-submenu {
+                                                                    position: relative;
+                                                                    }
+
+                                                                    .dropdown-submenu .dropdown-menu {
+                                                                    top: 0;
+                                                                    left: 100%;
+                                                                    margin-top: -1px;
+                                                                    }
+                                                                    .dropdown-submenu:hover > .dropdown-menu{
+                                                                        display: block;
+
+                                                                    }
+                                                                </style>
+                                                                <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                                    <a class="test sp-has-child" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                                                                    <ul class="dropdown-menu">
+                                                                      <li class="sp-menu-item"><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                                                      <li class="sp-menu-item"><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                                                      <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                                                                        <ul class="dropdown-menu">
+                                                                          <li class="sp-menu-item"><a href="#">3rd level dropdown</a></li>
+                                                                          <li class="sp-menu-item"><a href="#">3rd level dropdown</a></li>
+                                                                        </ul>
+                                                                      </li>
+                                                                    </ul>
 
                                                         </li>
                                                         <li class="sp-menu-item"><a
@@ -469,6 +517,7 @@
                                                                                     </ul>
                                                                                 </div>
                                                                                 <style type="text/css">
+                                             
                                                                                     #sppb-addon-wrapper-1651098505623 {
                                                                                         margin: 0px 0px 0px 0px;
                                                                                     }
@@ -536,18 +585,7 @@
                                                                                         color: var(--hover_color);
                                                                                     }
 
-                                                                                    @media (min-width: 768px) and (max-width: 991px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505624 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
-                                                                                    @media (max-width: 767px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505624 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
+                                                                                   
                                                                                     #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505625 a {
                                                                                         height: 7px;
                                                                                         margin: 9px;
@@ -570,17 +608,7 @@
                                                                                         color: var(--hover_color);
                                                                                     }
 
-                                                                                    @media (min-width: 768px) and (max-width: 991px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505625 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
-                                                                                    @media (max-width: 767px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505625 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
+                               
 
                                                                                     #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505626 a {
                                                                                         height: 7px;
@@ -604,17 +632,7 @@
                                                                                         color: var(--hover_color);
                                                                                     }
 
-                                                                                    @media (min-width: 768px) and (max-width: 991px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505626 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
-                                                                                    @media (max-width: 767px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505626 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
+                                                                                    
 
                                                                                     #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505627 a {
                                                                                         height: 7px;
@@ -638,17 +656,7 @@
                                                                                         color: var(--hover_color);
                                                                                     }
 
-                                                                                    @media (min-width: 768px) and (max-width: 991px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505627 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
-                                                                                    @media (max-width: 767px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505627 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
+                                                                                    
 
                                                                                     #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505628 a {
                                                                                         height: 7px;
@@ -672,17 +680,7 @@
                                                                                         color: var(--hover_color);
                                                                                     }
 
-                                                                                    @media (min-width: 768px) and (max-width: 991px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505628 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
-
-                                                                                    @media (max-width: 767px) {
-                                                                                        #sppb-addon-1651098505623 .sppb-icons-group-list li#icon-1651098505628 a {
-                                                                                            padding: ;
-                                                                                        }
-                                                                                    }
+                                                                                   
 
                                                                                     #sppb-addon-1651098505623 .sppb-addon-title {
                                                                                         margin: 0px 0px 0px 0px;
@@ -879,3 +877,13 @@
         </div>
 
         <!-- MOBILE VIEW END -->
+
+        <!-- <script>
+            $(document).ready(function(){
+              $('.dropdown-submenu a.test').on("click", function(e){
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+              });
+            });
+            </script> -->

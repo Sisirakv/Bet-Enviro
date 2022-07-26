@@ -334,6 +334,21 @@
                                             <span></span><span></span><span></span>
                                         </div>
                                     </a>
+                                    <style>
+                                        .dropdown-submenu {
+                                        position: relative;
+                                        }
+
+                                        .dropdown-submenu .dropdown-menu {
+                                        top: 0;
+                                        left: 100%;
+                                        margin-top: -1px;
+                                        }
+                                        .dropdown-submenu:hover > .dropdown-menu{
+                                            display: block;
+
+                                        }
+                                    </style>
                                     <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-block">
 
 
@@ -351,17 +366,42 @@
                                                 style="width: 240px;">
                                                 <div class="sp-dropdown-inner">
                                                     <ul class="sp-dropdown-items">
-                                                        <li class="sp-menu-item"><a
+                                                        <!-- <li class="sp-menu-item"><a
                                                                 href="{% url 'web:Water QT & diag' %}">Water Quality
                                                                 Testing &
                                                                 Diaganosis</a>
 
 
-                                                        </li>
-                                                        <li class="sp-menu-item"><a
-                                                                href="{% url 'web:Water Treatment' %}">Water
-                                                                Treatment</a>
-                                                        </li>
+                                                        </li> -->
+                                                        <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                            <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Water QT & diag' %}">Water Quality
+                                                                Testing &
+                                                                Diaganosis <span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="#">Water Quality Analysis</a></li>
+                                                              <li class="sp-menu-item"><a tabindex="-1" href="#">Waste Water Quality Testing</a></li>
+                                                        
+                                                            </ul>
+
+                                                </li>
+                                                <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                    <a class="test sp-has-child" tabindex="-1" href="{% url 'web:Water Treatment' %}">Water Treatment<span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                     
+                                                      <li class="dropdown-submenu sp-menu-item sp-has-child">
+                                                        <a class="test" href="{% url 'web:Water Filter' %}">Water Filter<span class="caret"></span></a>
+                                                        <ul class="dropdown-menu">
+                                                          <li class="sp-menu-item"><a href="#">Sand Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="#">Carbon Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="#">Iron Filter</a></li>
+                                                          <li class="sp-menu-item"><a href="#">Softener/Hardner</a></li>
+                                                          <li class="sp-menu-item"><a href="#">DMF</a></li>
+                                                          <li class="sp-menu-item"><a href="#">TMF</a></li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
+
+                                        </li>
                                                         <li class="sp-menu-item"><a
                                                                 href="{% url 'web:Water Conservation' %}">Water
                                                                 Conservation
@@ -381,8 +421,8 @@
                                                                 Managment</a>
                                                         </li>
 
-                                                        <li class="sp-menu-item"><a href="{% url 'web:Solid WM' %}">solid waste
-                                                            managment</a>
+                                                        <li class="sp-menu-item"><a href="{% url 'web:Solid WM' %}">Solid Waste
+                                                            Managment</a>
                                                             
                                                         <li class="sp-menu-item"><a
                                                                 href="{% url 'web:Solar Energy' %}">Solar Energy

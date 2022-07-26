@@ -36,7 +36,7 @@ urlpatterns = [
     path('RO/',views.ro,name='RO'),
     path('UF/',views.uf,name='UF'),
     path('UV/',views.uv,name='UV'),
-    path('Cartbridge/',views.cartbridge,name='Cartbridge'),
+    path('Cartridge/',views.cartbridge,name='Cartridge'),
     path('Alkaline/',views.alkaline,name='Alkaline'),
 
     path('Germ Removal/',views.germ_removal,name='Germ Removal'),

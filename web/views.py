@@ -484,8 +484,8 @@ def locate(request):
     context = {
         "service" : service,
         "service_name_select" : service_name_select,
-        "districts":districts,
-        "centre":service_centre,
+        "dist" : districts,
+        "centre" : service_centre,
     }
     return render(request,'web/locate ur service.html',context)
 

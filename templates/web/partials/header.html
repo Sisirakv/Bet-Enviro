@@ -108,7 +108,7 @@
                                                                             <div class="sppb-addon-content">
                                                                                 <ul class="topbar-menu sppb-text-right">
                                                                                     <li class="modal"><a
-                                                                                            href="contact/">Get a
+                                                                                            href=" {% url 'web:contact' %} ">Get a
                                                                                             Quote</a>
 
                                                                                     </li>
@@ -987,7 +987,7 @@
 
                             </li>
 
-                            <li class="item-111 menu-deeper menu-parent"><a href="#!">Services<span
+                            <li class="item-111 menu-deeper menu-parent"><a href="{% url 'web:services' %}">Services<span
                                 class="menu-toggler"></span></a>
                         <ul class="menu-child">
                             <li class="sp-menu-item"><a

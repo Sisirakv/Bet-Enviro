@@ -2727,6 +2727,7 @@
     {% include 'web/partials/header.html' %}
     
     {% block content %}
+
     {% endblock %}
     
     {% include 'web/partials/footer.html' %}
@@ -2748,7 +2749,9 @@
     right:15px;
     
   z-index:100;"><img src=" {% static 'images/whatsapp.png' %} " class="img-fluid" alt=""></a>
-   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   {% block js %}
+
+   {% endblock %}
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </html>

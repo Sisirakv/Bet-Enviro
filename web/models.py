@@ -93,7 +93,7 @@ class District(models.Model):
     district_name = models.CharField(max_length=255)
 
     class Meta:
-        verbose_name_plural = ("District")
+        verbose_name_plural = ("Districts")
 
     def __str__(self):
         return self.district_name
